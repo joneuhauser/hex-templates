@@ -4,7 +4,7 @@
 > This is an experimental library that I created by discussion with GPT-6 Astra for two days. The generated meshes check out and I'm using them in production for fluid dynamics simulations, but I'm not claiming that they are optimal. Use at your own risk. In particular I do not assert that there are no meshes with smaller element count for the same boundaries.
 
 > [!TIP]
-> Check out the ![documentation and mesh library](http://joneuhauser.github.io/hex-templates).  
+> Check out the [documentation and mesh library](http://joneuhauser.github.io/hex-templates).  
 
 
 A [static mesh library](https://joneuhauser.github.io/hex-templates/) with a connectivity search solver, validation tests,
