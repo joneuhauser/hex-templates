@@ -544,6 +544,7 @@
     "method": "Bijection of coordinates within tolerance, followed by exact oriented-cell connectivity comparison under all eight D4 boundary isometries."
   },
   "volume": 8.0,
+  "height_ratio": 1.0,
   "contained": true,
   "cap_quads": [
     4,

@@ -1,0 +1,327 @@
+{
+  "hexes": 13,
+  "vertices": 32,
+  "boundary_quads": 26,
+  "boundary_matches": true,
+  "face_multiplicity": {
+    "1": 26,
+    "2": 26
+  },
+  "opposite_internal_orientations": true,
+  "incompatible_pairs": [],
+  "distinct_cell_vertices": true,
+  "euler": 1,
+  "sampled": {
+    "grid": 7,
+    "min_det": 0.040267720244077085,
+    "min_scaled_jacobian": 0.10000000000000003,
+    "nonpositive_hexes": 0
+  },
+  "jacobian_certificates": [
+    {
+      "positive": true,
+      "lower_bound": 0.3333333333333333,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.044499297639415285,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.04026772024407709,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.04026772024407709,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.07205273492267382,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.07205273492267382,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.07205273492267382,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.06826478721872355,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.06826478721872355,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.06449448105925545,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.06449448105925545,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.06449448105925545,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.06449448105925545,
+      "depth": 0,
+      "leaves": 1
+    }
+  ],
+  "all_jacobians_positive": true,
+  "arithmetic": "exact rational from binary64 coordinates",
+  "manifold": {
+    "edge_links_valid": true,
+    "vertex_links_valid": true,
+    "bad_edges": [],
+    "bad_vertices": []
+  },
+  "homology": {
+    "betti_GF2": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "cell_counts": [
+      32,
+      70,
+      52,
+      13
+    ],
+    "boundary_ranks": [
+      31,
+      39,
+      13
+    ]
+  },
+  "fixed_boundary": true,
+  "symmetry": {
+    "group": "C2v",
+    "order": 4,
+    "mirrors": [
+      "x = 0",
+      "y = 0"
+    ],
+    "rotations": [
+      "180\u00b0 about z"
+    ],
+    "actions": [
+      {
+        "id": "identity",
+        "label": "Identity",
+        "kind": "identity",
+        "matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "fixed_cells": 13
+      },
+      {
+        "id": "r180",
+        "label": "180\u00b0 about z",
+        "kind": "rotation",
+        "matrix": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          3,
+          2,
+          5,
+          4,
+          6,
+          8,
+          7,
+          12,
+          11,
+          10,
+          9
+        ],
+        "fixed_cells": 3
+      },
+      {
+        "id": "mx",
+        "label": "x = 0",
+        "kind": "mirror",
+        "matrix": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          6,
+          7,
+          8,
+          10,
+          9,
+          12,
+          11
+        ],
+        "fixed_cells": 7
+      },
+      {
+        "id": "my",
+        "label": "y = 0",
+        "kind": "mirror",
+        "matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5,
+          6,
+          8,
+          7,
+          11,
+          12,
+          9,
+          10
+        ],
+        "fixed_cells": 5
+      }
+    ],
+    "cell_orbits": [
+      0,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6
+    ],
+    "orbit_count": 7,
+    "tolerance": 4e-10,
+    "method": "Bijection of coordinates within tolerance, followed by exact oriented-cell connectivity comparison under all eight D4 boundary isometries."
+  },
+  "volume": 16.0,
+  "height_ratio": 2.0,
+  "contained": true,
+  "cap_quads": [
+    1,
+    9
+  ],
+  "translation_matching": true,
+  "accepted": true,
+  "mesh_sha256": "21eba260c43cf2a14ad97a683bd69fa9dc22187c9c74bf1e53b783ae59eef12f",
+  "id": "F9-1-H13",
+  "boundary_case": "9-to-1-r0-Q4-01"
+}

@@ -24,7 +24,9 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT/'solver/input/refinement'
 SELECTED = {'9-to-1-r0-Q4-01': 13, '9-to-1-r1-Q5-01': 14,
             '16-to-4-r0-Q6-01': 28, '16-to-4-r1-Q8-03': 32,
-            '16-to-4-r0-Q7-04': 34, '25-to-9-r0-Q6-01': 33}
+            '16-to-4-r0-Q7-04': 34, '25-to-9-r0-Q6-01': 33,
+            '25-to-1-r0-Q7-01': 37, '25-to-1-r1-Q8-01': 38}
+SIDE_CAPS = {(1, 3): 8, (2, 4): 8, (3, 5): 10, (1, 5): 10}
 sys.path.insert(0, str(ROOT/'solver'))
 from compare_meshes import isomorphism
 
@@ -101,12 +103,14 @@ def boundary(bottom, top, patch, side_points):
     return p,q
 
 
-def enumerate_sides(output, grids=((1, 3), (2, 4), (3, 5)), max_quads=None):
+def enumerate_sides(output, grids=None, max_quads=None):
+    if grids is None:
+        grids = tuple(SIDE_CAPS)
     output.mkdir(parents=True, exist_ok=False)
     records, runs, scopes = [], [], []
     with tempfile.TemporaryDirectory() as tmp:
         for bottom, top in grids:
-            cap = max_quads if max_quads is not None else (10 if (bottom, top) == (3, 5) else 8)
+            cap = max_quads if max_quads is not None else SIDE_CAPS.get((bottom, top), 8)
             scopes.append(dict(bottom_segments=bottom, top_segments=top, max_quads=cap))
             for r in (0, 1):
                 rows = []
@@ -146,9 +150,12 @@ def enumerate_sides(output, grids=((1, 3), (2, 4), (3, 5)), max_quads=None):
     print(f'Enumerated and cross-checked {len(records)} refinement side walls', flush=True)
 
 
-def validate(path, case):
+def validate(path, case, height_ratio=1.0, boundary_path=None):
+    if not np.isfinite(height_ratio) or height_ratio <= 0:
+        raise ValueError('Height/width ratio must be positive and finite')
     p, h, q = read_mesh(path)
-    bp, _, bq = read_mesh(INPUT/f'{case["id"]}.mesh')
+    bp, _, bq = read_mesh(boundary_path or INPUT/f'{case["id"]}.mesh')
+    bp[:, 2] *= height_ratio
     report = audit(path)
     report['manifold'] = manifold(h)
     report['homology'] = homology(h)
@@ -156,8 +163,10 @@ def validate(path, case):
         and {tuple(sorted(f)) for f in q} == {tuple(sorted(f)) for f in bq})
     report['symmetry'] = symmetries(p, h)
     report['volume'] = sum(float(sum(bernstein(p[c]).flat))*8/27 for c in h)
-    report['contained'] = bool(np.all(p >= -1-1e-12) and np.all(p <= 1+1e-12))
-    report['cap_quads'] = [int(sum(np.all(p[f, 2] == z) for f in q)) for z in (-1, 1)]
+    report['height_ratio'] = height_ratio
+    extent = np.array([1., 1., height_ratio])
+    report['contained'] = bool(np.all(p >= -extent-1e-12) and np.all(p <= extent+1e-12))
+    report['cap_quads'] = [int(sum(np.all(p[f, 2] == z) for f in q)) for z in (-height_ratio, height_ratio)]
     report['translation_matching'] = True
     for axis in (0, 1):
         sides = [{tuple(sorted(tuple(v[[1-axis, 2]]) for v in p[f])) for f in q
@@ -169,7 +178,7 @@ def validate(path, case):
         and report['distinct_cell_vertices'] and report['euler'] == 1
         and report['manifold']['edge_links_valid'] and report['manifold']['vertex_links_valid']
         and report['homology']['betti_GF2'] == [1, 0, 0, 0] and report['contained']
-        and abs(report['volume']-8) < 1e-9 and report['translation_matching']
+        and abs(report['volume']-8*height_ratio) < 1e-9*max(1.,height_ratio) and report['translation_matching']
         and report['cap_quads'] == [case['bottom_grid']**2, case['top_grid']**2]
         and len(report['symmetry']['mirrors']) >= 2)
     return report
@@ -230,6 +239,14 @@ def search_case(case, args, parent):
             write_vtu(output/'accepted.vtu', p, h)
             save(output/'validation.json', report)
             save(output/'quality.json', dense(p, h, True))
+            if not args.fixed_height and args.planes == 'axial':
+                from hexopt_refinement import optimize
+                optimized = optimize(output/'accepted.mesh', case, args.hexopt, output/'height',
+                                     boundary_path=INPUT/f'{case["id"]}.mesh')
+                record['height_optimization'] = {key: dict(height_ratio=optimized[key]['height_ratio'],
+                    min_scaled_jacobian=optimized[key]['metrics']['min_scaled_jacobian'],
+                    max_condition=optimized[key]['metrics']['max_condition'])
+                    for key in ['best_sj', 'best_condition']}
         results.append(record)
         print(json.dumps(dict(case=case['id'], variant=i, **record)), flush=True)
     save(directory/'results.json', results)
@@ -254,16 +271,18 @@ def main():
     search.add_argument('--restarts', type=int, default=int(os.environ.get('HEXOPT_RESTARTS', '6')))
     search.add_argument('--hexopt', type=Path, default=Path(os.environ.get('HEXOPT_BINARY', ROOT/'solver/build/hexopt_fixed')))
     search.add_argument('--output', type=Path)
+    search.add_argument('--fixed-height', action='store_true',
+                        help='Keep only the cube embedding, skipping layer-height optimization')
     search.add_argument('--inputs', type=Path, default=INPUT,
                         help='Folder containing cases.json and boundary meshes')
     args = parser.parse_args()
     if args.mode == 'sides':
         if (args.bottom_grid is None) != (args.top_grid is None):
             parser.error('Specify both --bottom-grid and --top-grid')
-        grids = ((args.bottom_grid, args.top_grid),) if args.bottom_grid is not None else ((1, 3), (2, 4), (3, 5))
+        grids = ((args.bottom_grid, args.top_grid),) if args.bottom_grid is not None else tuple(SIDE_CAPS)
         if (args.max_quads is not None and not 1 <= args.max_quads <= 12) or any(not 1 <= n <= 12 for pair in grids for n in pair):
             parser.error('Grid sizes and quad cap must be between 1 and 12')
-        if any((bottom+top)%2 or (args.max_quads if args.max_quads is not None else (10 if (bottom,top)==(3,5) else 8)) < (bottom+top)//2+1 for bottom,top in grids):
+        if any((bottom+top)%2 or (args.max_quads if args.max_quads is not None else SIDE_CAPS.get((bottom,top),8)) < (bottom+top)//2+1 for bottom,top in grids):
             parser.error('Top and bottom need equal parity and a sufficient quad cap')
         enumerate_sides(args.output.resolve(), grids, args.max_quads); return
     if not 1 <= args.threads <= 256 or args.seconds < 0 or args.restarts < 1 or (args.cap is not None and not 1 <= args.cap <= 48):

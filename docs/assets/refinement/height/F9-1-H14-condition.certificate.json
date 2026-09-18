@@ -1,0 +1,338 @@
+{
+  "hexes": 14,
+  "vertices": 36,
+  "boundary_quads": 30,
+  "boundary_matches": true,
+  "face_multiplicity": {
+    "1": 30,
+    "2": 27
+  },
+  "opposite_internal_orientations": true,
+  "incompatible_pairs": [],
+  "distinct_cell_vertices": true,
+  "euler": 1,
+  "sampled": {
+    "grid": 7,
+    "min_det": 0.0011912727514248474,
+    "min_scaled_jacobian": 0.49005793429581107,
+    "nonpositive_hexes": 0
+  },
+  "jacobian_certificates": [
+    {
+      "positive": true,
+      "lower_bound": 0.6342936002503466,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.10571560004172444,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0327138553574162,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0327138553574162,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.03363257516047476,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0017155479725205049,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0017155479725205049,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0017155479725205047,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0011912727514248585,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0011912727514248585,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0016460058982799258,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0016460058982799258,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0016460058982799258,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0016460058982799258,
+      "depth": 0,
+      "leaves": 1
+    }
+  ],
+  "all_jacobians_positive": true,
+  "arithmetic": "exact rational from binary64 coordinates",
+  "manifold": {
+    "edge_links_valid": true,
+    "vertex_links_valid": true,
+    "bad_edges": [],
+    "bad_vertices": []
+  },
+  "homology": {
+    "betti_GF2": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "cell_counts": [
+      36,
+      78,
+      57,
+      14
+    ],
+    "boundary_ranks": [
+      35,
+      43,
+      14
+    ]
+  },
+  "fixed_boundary": true,
+  "symmetry": {
+    "group": "C2v",
+    "order": 4,
+    "mirrors": [
+      "x = 0",
+      "y = 0"
+    ],
+    "rotations": [
+      "180\u00b0 about z"
+    ],
+    "actions": [
+      {
+        "id": "identity",
+        "label": "Identity",
+        "kind": "identity",
+        "matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "fixed_cells": 14
+      },
+      {
+        "id": "r180",
+        "label": "180\u00b0 about z",
+        "kind": "rotation",
+        "matrix": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          6,
+          5,
+          7,
+          9,
+          8,
+          13,
+          12,
+          11,
+          10
+        ],
+        "fixed_cells": 4
+      },
+      {
+        "id": "mx",
+        "label": "x = 0",
+        "kind": "mirror",
+        "matrix": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5,
+          6,
+          7,
+          9,
+          8,
+          11,
+          10,
+          13,
+          12
+        ],
+        "fixed_cells": 6
+      },
+      {
+        "id": "my",
+        "label": "y = 0",
+        "kind": "mirror",
+        "matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          8,
+          9,
+          12,
+          13,
+          10,
+          11
+        ],
+        "fixed_cells": 8
+      }
+    ],
+    "cell_orbits": [
+      0,
+      1,
+      2,
+      2,
+      3,
+      4,
+      4,
+      5,
+      6,
+      6,
+      7,
+      7,
+      7,
+      7
+    ],
+    "orbit_count": 8,
+    "tolerance": 2.537174401001387e-10,
+    "method": "Bijection of coordinates within tolerance, followed by exact oriented-cell connectivity comparison under all eight D4 boundary isometries."
+  },
+  "volume": 10.148697604005545,
+  "height_ratio": 1.2685872005006933,
+  "contained": true,
+  "cap_quads": [
+    1,
+    9
+  ],
+  "translation_matching": true,
+  "accepted": true,
+  "mesh_sha256": "16874e6debb8503340786a1fbe72cf28097fa2b920c633f92742789075d66ec2",
+  "id": "F9-1-H14",
+  "boundary_case": "9-to-1-r1-Q5-01"
+}

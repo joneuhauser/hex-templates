@@ -1,0 +1,602 @@
+{
+  "hexes": 38,
+  "vertices": 76,
+  "boundary_quads": 58,
+  "boundary_matches": true,
+  "face_multiplicity": {
+    "1": 58,
+    "2": 85
+  },
+  "opposite_internal_orientations": true,
+  "incompatible_pairs": [],
+  "distinct_cell_vertices": true,
+  "euler": 1,
+  "sampled": {
+    "grid": 7,
+    "min_det": 0.00020835663505484967,
+    "min_scaled_jacobian": 0.06885433832485492,
+    "nonpositive_hexes": 0
+  },
+  "jacobian_certificates": [
+    {
+      "positive": true,
+      "lower_bound": 2.0,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.4168421052631579,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.057962293498125345,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.057962293498125345,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.07655430270946599,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.007483658845125596,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.007483658845125596,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.015748061552500844,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.014913859967384709,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.014913859967384709,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.014913859967384709,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.014913859967384709,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.011345014590678219,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.011345014590678219,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.005089670733437894,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.005089670733437894,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00795814371450513,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00795814371450513,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00795814371450513,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00795814371450513,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.006071008690386863,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.006071008690386863,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.006071008690386863,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.006071008690386863,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00021029920914109615,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00021029920914109615,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00021029920914109615,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00021029920914109615,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.005588771697438685,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00024201294491274644,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00024201294491274644,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.006071008690386864,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.006071008690386864,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00024678778623216314,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0002083566350548501,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0002083566350548501,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.007371802613876708,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.007371802613876708,
+      "depth": 0,
+      "leaves": 1
+    }
+  ],
+  "all_jacobians_positive": true,
+  "arithmetic": "exact rational from binary64 coordinates",
+  "manifold": {
+    "edge_links_valid": true,
+    "vertex_links_valid": true,
+    "bad_edges": [],
+    "bad_vertices": []
+  },
+  "homology": {
+    "betti_GF2": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "cell_counts": [
+      76,
+      180,
+      143,
+      38
+    ],
+    "boundary_ranks": [
+      75,
+      105,
+      38
+    ]
+  },
+  "fixed_boundary": true,
+  "symmetry": {
+    "group": "C2v",
+    "order": 4,
+    "mirrors": [
+      "x = 0",
+      "y = 0"
+    ],
+    "rotations": [
+      "180\u00b0 about z"
+    ],
+    "actions": [
+      {
+        "id": "identity",
+        "label": "Identity",
+        "kind": "identity",
+        "matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37
+        ],
+        "fixed_cells": 38
+      },
+      {
+        "id": "r180",
+        "label": "180\u00b0 about z",
+        "kind": "rotation",
+        "matrix": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          6,
+          5,
+          7,
+          11,
+          10,
+          9,
+          8,
+          13,
+          12,
+          15,
+          14,
+          19,
+          18,
+          17,
+          16,
+          23,
+          22,
+          21,
+          20,
+          27,
+          26,
+          25,
+          24,
+          28,
+          30,
+          29,
+          32,
+          31,
+          33,
+          35,
+          34,
+          37,
+          36
+        ],
+        "fixed_cells": 6
+      },
+      {
+        "id": "mx",
+        "label": "x = 0",
+        "kind": "mirror",
+        "matrix": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          5,
+          7,
+          9,
+          8,
+          11,
+          10,
+          12,
+          13,
+          15,
+          14,
+          17,
+          16,
+          19,
+          18,
+          21,
+          20,
+          23,
+          22,
+          25,
+          24,
+          27,
+          26,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          35,
+          34,
+          37,
+          36
+        ],
+        "fixed_cells": 14
+      },
+      {
+        "id": "my",
+        "label": "y = 0",
+        "kind": "mirror",
+        "matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "max_residual": 0.0,
+        "cell_permutation": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5,
+          6,
+          7,
+          10,
+          11,
+          8,
+          9,
+          13,
+          12,
+          14,
+          15,
+          18,
+          19,
+          16,
+          17,
+          22,
+          23,
+          20,
+          21,
+          26,
+          27,
+          24,
+          25,
+          28,
+          30,
+          29,
+          32,
+          31,
+          33,
+          34,
+          35,
+          36,
+          37
+        ],
+        "fixed_cells": 14
+      }
+    ],
+    "cell_orbits": [
+      0,
+      1,
+      2,
+      2,
+      3,
+      4,
+      4,
+      5,
+      6,
+      6,
+      6,
+      6,
+      7,
+      7,
+      8,
+      8,
+      9,
+      9,
+      9,
+      9,
+      10,
+      10,
+      10,
+      10,
+      11,
+      11,
+      11,
+      11,
+      12,
+      13,
+      13,
+      14,
+      14,
+      15,
+      16,
+      16,
+      17,
+      17
+    ],
+    "orbit_count": 18,
+    "tolerance": 8e-10,
+    "method": "Bijection of coordinates within tolerance, followed by exact oriented-cell connectivity comparison under all eight D4 boundary isometries."
+  },
+  "volume": 31.999999999999996,
+  "height_ratio": 4.0,
+  "contained": true,
+  "cap_quads": [
+    1,
+    25
+  ],
+  "translation_matching": true,
+  "accepted": true,
+  "mesh_sha256": "94e66a9cd213ba04ceecee63b10e8aff86e1060ed267216a32cb974377caa257",
+  "id": "F25-1-H38-03",
+  "boundary_case": "25-to-1-r1-Q8-01"
+}

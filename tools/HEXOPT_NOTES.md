@@ -62,3 +62,15 @@ Output is checked against a reference with precisely that rigid top shift,
 then receives independent periodic topology and exact Jacobian checks. Dense
 21³ quality, rather than the optimizer’s corner threshold, determines whether
 to adopt the geometry.
+
+For refinement layers, `tools/hexopt_refinement.py` uses one bounded variable
+for the height/width ratio and symmetric interior coordinates. The footprint
+stays [-1,1]²; each boundary z coordinate equals its canonical value times that
+ratio. Both axial mirrors and normalized wall positions are preserved. Six
+height starts share bounds [0.05, 4]. The driver certifies each result and
+selects the highest dense minimum SJ and the lowest worst condition number
+among all valid trials, including simply scaled references. The objective
+remains HexOpt's SJ threshold; the condition selection is not a separate
+condition-number optimization. Results record heights, metrics, input and
+binary hashes, and attempt outcomes. The default stall limit is 50,000 and
+each optimizer attempt has a 180-second limit.

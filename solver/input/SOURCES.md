@@ -80,14 +80,14 @@ caps and 22 side quads, for the alternative-symmetry searches.
 
 ## Refinement boundaries
 
-`refinement/` contains boundary-only cubes for 9-to-1, 16-to-4 and 25-to-9 grid
+`refinement/` contains boundary-only cubes for 9-to-1, 16-to-4, 25-to-9 and 25-to-1 grid
 transitions. `cases.json` records exact rational side-wall coordinates and
 connectivity; the top and bottom use regular grids on `[-1,1]²` at z = ±1.
 All four walls are identical, left/right symmetric, and translation matching.
 
 Generate these inputs into a fresh folder with
 `python3 tools/refinement.py sides --output DIRECTORY`. This enumerates side
-disks through eight quads for 9-to-1 and 16-to-4, and ten for 25-to-9,
+disks through eight quads for 9-to-1 and 16-to-4, and ten for 25-to-9 and 25-to-1,
 with zero or one extra vertex per vertical edge,
 and cross-checks orbit insertion against individual-quad insertion.
 `enumeration.json` records the source hash and output hashes for both modes.

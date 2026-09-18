@@ -1,4 +1,4 @@
-"""Build a static four-collection landing page and data-derived SVG previews."""
+"""Build the collection landing page and data-derived SVG previews."""
 from html import escape
 import json
 from pathlib import Path
@@ -71,10 +71,11 @@ def build():
     geode=json.loads((DOCS/'assets/geode/catalog.json').read_text())
     sides=json.loads((DOCS/'assets/geode-sides/catalog.json').read_text())
     periodic=json.loads((DOCS/'assets/periodic/current-catalog.json').read_text())
-    refinement=json.loads((DOCS/'assets/refinement/catalog.json').read_text())
+    refinement=json.loads((DOCS/'assets/refinement/height/sj-catalog.json').read_text())
     mesh_preview('pyramid.svg',DOCS/pyramid['templates'][0]['mesh'],'A 36-cell hexahedral filling of Schneiders’ pyramid, with cells separated for inspection')
     mesh_preview('geode.svg',DOCS/geode['templates'][0]['mesh'],'Mitchell’s 26-cell Geode mesh, with cells separated for inspection')
     side_preview(sides['patterns'])
+    refinement_sides=json.loads((DOCS/'assets/refinement/side-catalog.json').read_text())
     featured=next(t for t in refinement['templates'] if t['id']=='F16-4-H32')
     mesh_preview('refinement.svg',DOCS/featured['mesh'],'A 32-cell 16-to-4 hexahedral refinement transition')
     # Reuse the exact cap sketch; the nested viewport keeps all previews equal.
@@ -86,7 +87,7 @@ def build():
         ('geode.html','geode.svg','Mitchell’s Geode','A hexahedral transition between a quadrilateral grid and a quadrangulated tetrahedral-mesh boundary.',f'{len(geode["templates"])} meshes','26–44 cells','The 26-cell Geode mesh with separated cells'),
         ('geode-sides.html','side-walls.svg','Geode side walls','Quadrilateral boundary patterns for assembling Geode cells with matching sides.',f'{len(sides["patterns"])} patterns',f'Up to {sides["max_quads"]} quads','Three quadrilateral side-wall patterns'),
         ('periodic.html','periodic.svg','Periodic grid rotation','Transitions between rectangular and rotated quad grids, grouped by periodic connectivity.',f'{len(periodic["templates"])} connectivities','38–110 cells per tile','A unit cube with meshed top and bottom and empty side walls'),
-        ('refinement.html','refinement.svg','Refinement templates','9-to-1, 16-to-4 and 25-to-9 quad-grid transitions, with certified hex meshes and enumerated side walls.',f'{len(refinement["templates"])} meshes','28 side-wall patterns','A 32-cell hexahedral refinement transition')]
+        ('refinement.html','refinement.svg','Refinement templates','9-to-1, 16-to-4, 25-to-9 and 25-to-1 quad-grid transitions, with certified hex meshes and enumerated side walls.',f'{len(refinement["templates"])} meshes',f'{len(refinement_sides["patterns"])} side-wall patterns' ,'A 32-cell hexahedral refinement transition')]
     tiles=''.join(f'''<a class="collection-card" href="{url}">
 <div class="collection-preview"><img src="assets/previews/{preview}" alt="{alt}" width="620" height="310"></div>
 <div class="collection-card-body"><div class="collection-card-title"><h2>{title}</h2><span class="collection-arrow" aria-hidden="true">↗</span></div>

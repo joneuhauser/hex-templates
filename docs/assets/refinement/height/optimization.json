@@ -1,0 +1,2293 @@
+{
+  "height_definition": "Full layer height divided by the fixed footprint width (2)",
+  "templates": {
+    "F16-4-H28": {
+      "boundary_case": "16-to-4-r0-Q6-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "9c3cf6f44db8dd68ea80f2b101a8028ab4ed69fd715e71b9b419946ad50eb46f",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.19999999999999996,
+          "max_condition": 7.118320327668908
+        }
+      },
+      "best_sj": {
+        "label": "optimized-2",
+        "mesh": "F16-4-H28-sj.mesh",
+        "height_ratio": 0.499415922761687,
+        "metrics": {
+          "min_scaled_jacobian": 0.49018963751987815,
+          "max_condition": 5.333445363810843
+        }
+      },
+      "best_condition": {
+        "label": "optimized-2",
+        "mesh": "F16-4-H28-condition.mesh",
+        "height_ratio": 0.499415922761687,
+        "metrics": {
+          "min_scaled_jacobian": 0.49018963751987815,
+          "max_condition": 5.333445363810843
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.19999999999999996,
+            "max_condition": 7.118320327668908
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.09310483584145901,
+            "max_condition": 23.931007112461597
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 0.4086749910782532,
+          "metrics": {
+            "min_scaled_jacobian": 0.49000005720666007,
+            "max_condition": 9.774202982773089
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.1821185782653529,
+            "max_condition": 13.014468343413697
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 0.40868179283492756,
+          "metrics": {
+            "min_scaled_jacobian": 0.49000168000735955,
+            "max_condition": 7.1331082925230875
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.28681919609031425,
+            "max_condition": 8.362656416737789
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.499415922761687,
+          "metrics": {
+            "min_scaled_jacobian": 0.49018963751987815,
+            "max_condition": 5.333445363810843
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.19999999999999996,
+            "max_condition": 7.118320327668908
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 0.5100743955428848,
+          "metrics": {
+            "min_scaled_jacobian": 0.49002707771175164,
+            "max_condition": 9.139651036825631
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.05882352941176472,
+            "max_condition": 12.490324708938035
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 0.5100905908734903,
+          "metrics": {
+            "min_scaled_jacobian": 0.49001120883027904,
+            "max_condition": 1014.4899615118898
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.015384615384615387,
+            "max_condition": 24.12614185398337
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.015384615384615387,
+            "max_condition": 24.12614185398337
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F16-4-H32": {
+      "boundary_case": "16-to-4-r1-Q8-03",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "439c08acfc54622fc26e6f5b9a1a73f595cf6db1330d9b716a965514906d38b8",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.5107114359587395,
+          "max_condition": 4.7855444682679655
+        }
+      },
+      "best_sj": {
+        "label": "optimized-3",
+        "mesh": "F16-4-H32-sj.mesh",
+        "height_ratio": 0.9110118393625043,
+        "metrics": {
+          "min_scaled_jacobian": 0.5600085409844441,
+          "max_condition": 5.362432535055676
+        }
+      },
+      "best_condition": {
+        "label": "baseline",
+        "mesh": "F16-4-H32-condition.mesh",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.5107114359587395,
+          "max_condition": 4.7855444682679655
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.5107114359587395,
+            "max_condition": 4.7855444682679655
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.07111046901779024,
+            "max_condition": 34.031457810605005
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 0.8955399970526692,
+          "metrics": {
+            "min_scaled_jacobian": 0.5600001001908123,
+            "max_condition": 22.812781882369336
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.14142749732154153,
+            "max_condition": 17.01701050824476
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 0.8955398927252985,
+          "metrics": {
+            "min_scaled_jacobian": 0.5600000922037777,
+            "max_condition": 12.56374392114302
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.2767526777946028,
+            "max_condition": 8.511235592149218
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.8955399510451223,
+          "metrics": {
+            "min_scaled_jacobian": 0.5600000966685938,
+            "max_condition": 5.884641454364653
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.5107114359587395,
+            "max_condition": 4.7855444682679655
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 0.9110118393625043,
+          "metrics": {
+            "min_scaled_jacobian": 0.5600085409844441,
+            "max_condition": 5.362432535055676
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.20891194872577443,
+            "max_condition": 5.976017285580246
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 0.9110211997379946,
+          "metrics": {
+            "min_scaled_jacobian": 0.5600034776519556,
+            "max_condition": 737.7831772814977
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.06193168966297216,
+            "max_condition": 11.827154432989682
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 1.9934276593697249,
+          "metrics": {
+            "min_scaled_jacobian": 0.2100020182240965,
+            "max_condition": 7325.773236689919
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F16-4-H34": {
+      "boundary_case": "16-to-4-r0-Q7-04",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "43ec4778eec862907e88dd8cacdabebd8d7797f093c99d36a2d75c67f75ce9bf",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.39030762433057514,
+          "max_condition": 3904.0615734601556
+        }
+      },
+      "best_sj": {
+        "label": "optimized-5",
+        "mesh": "F16-4-H34-sj.mesh",
+        "height_ratio": 1.4589167568125936,
+        "metrics": {
+          "min_scaled_jacobian": 0.42000875714223573,
+          "max_condition": 3267.1834327703523
+        }
+      },
+      "best_condition": {
+        "label": "optimized-1",
+        "mesh": "F16-4-H34-condition.mesh",
+        "height_ratio": 0.3858008447923691,
+        "metrics": {
+          "min_scaled_jacobian": 0.17532033065377936,
+          "max_condition": 990.9193296793954
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.39030762433057514,
+            "max_condition": 3904.0615734601556
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.05291725372315609,
+            "max_condition": 26548.12237780449
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 0.3629548647963524,
+          "metrics": {
+            "min_scaled_jacobian": 0.15465844996974343,
+            "max_condition": 1203.7192961395026
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.10539274647870525,
+            "max_condition": 13385.593306428353
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 0.3858008447923691,
+          "metrics": {
+            "min_scaled_jacobian": 0.17532033065377936,
+            "max_condition": 990.9193296793954
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.20735890566479603,
+            "max_condition": 6915.861179589136
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.5550420889795783,
+          "metrics": {
+            "min_scaled_jacobian": 0.24942135151003966,
+            "max_condition": 47082.21701277683
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.39030762433057514,
+            "max_condition": 3904.0615734601556
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.39030762433057514,
+            "max_condition": 3904.061573460122
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.3229785645215838,
+            "max_condition": 2844.301242853026
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 1.4600244372896394,
+          "metrics": {
+            "min_scaled_jacobian": 0.4200012909832451,
+            "max_condition": 2654.928502635588
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.14932223393850405,
+            "max_condition": 3206.7078783081847
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 1.4589167568125936,
+          "metrics": {
+            "min_scaled_jacobian": 0.42000875714223573,
+            "max_condition": 3267.1834327703523
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F25-1-H37-01": {
+      "boundary_case": "25-to-1-r0-Q7-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "c0b3623fddbe061000f74b3a623c9feb3d3cff1251422bf5ab3b0a0f4c7fb90a",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.22040787549222923,
+          "max_condition": 15.521967975054798
+        }
+      },
+      "best_sj": {
+        "label": "optimized-3",
+        "mesh": "F25-1-H37-01-sj.mesh",
+        "height_ratio": 0.7927973850724765,
+        "metrics": {
+          "min_scaled_jacobian": 0.3200041048878332,
+          "max_condition": 210.76845714662878
+        }
+      },
+      "best_condition": {
+        "label": "scaled-4",
+        "mesh": "F25-1-H37-01-condition.mesh",
+        "height_ratio": 2.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.06885433832485492,
+          "max_condition": 14.51396878286043
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.22040787549222923,
+            "max_condition": 15.521967975054798
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.032607186097765604,
+            "max_condition": 107.96312587894005
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 0.2987533784548345,
+          "metrics": {
+            "min_scaled_jacobian": 0.14026018700336026,
+            "max_condition": 129.94761287573036
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.06511061367044761,
+            "max_condition": 54.01926949771394
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 0.3314468304195003,
+          "metrics": {
+            "min_scaled_jacobian": 0.1601621539783376,
+            "max_condition": 280.077075996888
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.1265957744985388,
+            "max_condition": 27.850560747308247
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.4964381793838231,
+          "metrics": {
+            "min_scaled_jacobian": 0.2300287481216016,
+            "max_condition": 119.16168536320856
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.22040787549222923,
+            "max_condition": 15.521967975054798
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 0.7927973850724765,
+          "metrics": {
+            "min_scaled_jacobian": 0.3200041048878332,
+            "max_condition": 210.76845714662878
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.06885433832485492,
+            "max_condition": 14.51396878286043
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 0.478476340112151,
+          "metrics": {
+            "min_scaled_jacobian": 0.2103172468286161,
+            "max_condition": 53.358065840757426
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.018150911323071114,
+            "max_condition": 21.118097163949283
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 3.807015548714113,
+          "metrics": {
+            "min_scaled_jacobian": 0.02000002054357879,
+            "max_condition": 20.102625735508006
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F25-1-H37-02": {
+      "boundary_case": "25-to-1-r0-Q7-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "e268d3ff8fec125b1cdfa11e03480cdc62a0b161cb8665c5c3024531ee0b849c",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.2282660332541568,
+          "max_condition": 10.94767821117835
+        }
+      },
+      "best_sj": {
+        "label": "optimized-1",
+        "mesh": "F25-1-H37-02-sj.mesh",
+        "height_ratio": 0.6346746773032058,
+        "metrics": {
+          "min_scaled_jacobian": 0.4003968532643245,
+          "max_condition": 33.93177708066008
+        }
+      },
+      "best_condition": {
+        "label": "baseline",
+        "mesh": "F25-1-H37-02-condition.mesh",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.2282660332541568,
+          "max_condition": 10.94767821117835
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.2282660332541568,
+            "max_condition": 10.94767821117835
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.04807108923577453,
+            "max_condition": 74.49751066136314
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 0.2856925581215525,
+          "metrics": {
+            "min_scaled_jacobian": 0.19487604731568345,
+            "max_condition": 32.63936638585086
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.0958106489321355,
+            "max_condition": 37.25113212203636
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 0.6346746773032058,
+          "metrics": {
+            "min_scaled_jacobian": 0.4003968532643245,
+            "max_condition": 33.93177708066008
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.18903604019804354,
+            "max_condition": 18.630346226729852
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.5114798106814646,
+          "metrics": {
+            "min_scaled_jacobian": 0.3500901637987997,
+            "max_condition": 188.54901931952512
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.2282660332541568,
+            "max_condition": 10.94767821117835
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 0.7096479953886358,
+          "metrics": {
+            "min_scaled_jacobian": 0.3700142455786003,
+            "max_condition": 305.19764096326253
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.06885433832485492,
+            "max_condition": 12.498325487324497
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 1.1229133658869659,
+          "metrics": {
+            "min_scaled_jacobian": 0.13741605529390039,
+            "max_condition": 78.32557388737727
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.018150911323071114,
+            "max_condition": 23.7802612203144
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 3.8070119033185987,
+          "metrics": {
+            "min_scaled_jacobian": 0.020000058079503166,
+            "max_condition": 21.52380198485314
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F25-1-H37-03": {
+      "boundary_case": "25-to-1-r0-Q7-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "6525820e340d35b329b9a4d027c4dc0e4471b84ff8834ddc78b03eca4949b131",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.2282660332541568,
+          "max_condition": 12.394509419083926
+        }
+      },
+      "best_sj": {
+        "label": "optimized-2",
+        "mesh": "F25-1-H37-03-sj.mesh",
+        "height_ratio": 0.6501182274264689,
+        "metrics": {
+          "min_scaled_jacobian": 0.41020713467968895,
+          "max_condition": 131.4987040331746
+        }
+      },
+      "best_condition": {
+        "label": "baseline",
+        "mesh": "F25-1-H37-03-condition.mesh",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.2282660332541568,
+          "max_condition": 12.394509419083926
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.2282660332541568,
+            "max_condition": 12.394509419083926
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.04807108923577457,
+            "max_condition": 74.49751066136315
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 0.6524024402740239,
+          "metrics": {
+            "min_scaled_jacobian": 0.41000594738434637,
+            "max_condition": 164.19926966260203
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.09581064893213555,
+            "max_condition": 37.25113212203634
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 0.6523974450363981,
+          "metrics": {
+            "min_scaled_jacobian": 0.4100096517224838,
+            "max_condition": 157.10036197969478
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.1890360401980436,
+            "max_condition": 18.630346226729852
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.6501182274264689,
+          "metrics": {
+            "min_scaled_jacobian": 0.41020713467968895,
+            "max_condition": 131.4987040331746
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.2282660332541568,
+            "max_condition": 12.394509419083926
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 0.6524024908651048,
+          "metrics": {
+            "min_scaled_jacobian": 0.4100059098675154,
+            "max_condition": 1058.6846764638683
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.06885433832485492,
+            "max_condition": 14.195406920066603
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 0.652387054749141,
+          "metrics": {
+            "min_scaled_jacobian": 0.4100173570124915,
+            "max_condition": 1638.5161500119527
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.018150911323071114,
+            "max_condition": 26.995913182339507
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 3.8070119033185987,
+          "metrics": {
+            "min_scaled_jacobian": 0.020000058079503166,
+            "max_condition": 24.221915334848134
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F25-1-H38-01": {
+      "boundary_case": "25-to-1-r1-Q8-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "dd1b01d79adf126d7e6513818ec71961a9d6716ac3aeae5ebbbaf0a2dccea8ae",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.23000318494580596,
+          "max_condition": 98.22078906361126
+        }
+      },
+      "best_sj": {
+        "label": "optimized-4",
+        "mesh": "F25-1-H38-01-sj.mesh",
+        "height_ratio": 1.8839835260403104,
+        "metrics": {
+          "min_scaled_jacobian": 0.2500003110883608,
+          "max_condition": 51.92763377572675
+        }
+      },
+      "best_condition": {
+        "label": "optimized-4",
+        "mesh": "F25-1-H38-01-condition.mesh",
+        "height_ratio": 1.8839835260403104,
+        "metrics": {
+          "min_scaled_jacobian": 0.2500003110883608,
+          "max_condition": 51.92763377572675
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": false,
+          "result": null
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": false,
+          "result": null
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.23000318494580596,
+            "max_condition": 98.22078906361126
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.02952955121871308,
+            "max_condition": 733.5120920936573
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.05898200485950483,
+            "max_condition": 367.95138959847156
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.11735321317374657,
+            "max_condition": 186.39207175058036
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.5310508488408877,
+          "metrics": {
+            "min_scaled_jacobian": 0.130001855526768,
+            "max_condition": 878.519144760965
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.23000318494580596,
+            "max_condition": 98.22078906361126
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.23000318494580596,
+            "max_condition": 98.22078906361126
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.2282660332541568,
+            "max_condition": 60.11709566745785
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 1.8839835260403104,
+          "metrics": {
+            "min_scaled_jacobian": 0.2500003110883608,
+            "max_condition": 51.92763377572675
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.06885433832485492,
+            "max_condition": 53.5276856156789
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 3.9646904337657696,
+          "metrics": {
+            "min_scaled_jacobian": 0.0700000015536741,
+            "max_condition": 389.0345162126522
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F25-1-H38-02": {
+      "boundary_case": "25-to-1-r1-Q8-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "25e3f72f1c514e56d7ca0dc0abff3efa2d6989b4da1af36cd81045389a27c8bd",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.3489987155591511,
+          "max_condition": 2338.2751389267887
+        }
+      },
+      "best_sj": {
+        "label": "optimized-1",
+        "mesh": "F25-1-H38-02-sj.mesh",
+        "height_ratio": 1.284692245225109,
+        "metrics": {
+          "min_scaled_jacobian": 0.41028251268656296,
+          "max_condition": 121.39568908416192
+        }
+      },
+      "best_condition": {
+        "label": "optimized-3",
+        "mesh": "F25-1-H38-02-condition.mesh",
+        "height_ratio": 1.2597301842479938,
+        "metrics": {
+          "min_scaled_jacobian": 0.41007055001714177,
+          "max_condition": 19.482604540431915
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.3489987155591511,
+            "max_condition": 2338.2751389267887
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.0466553259404589,
+            "max_condition": 14623.089889356732
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 1.2854440870867152,
+          "metrics": {
+            "min_scaled_jacobian": 0.4100585499958028,
+            "max_condition": 130.7223050210384
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.09300746928360894,
+            "max_condition": 7410.275700701402
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 1.284692245225109,
+          "metrics": {
+            "min_scaled_jacobian": 0.41028251268656296,
+            "max_condition": 121.39568908416192
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.18364727053124985,
+            "max_condition": 3901.2122189223746
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 1.284604103024782,
+          "metrics": {
+            "min_scaled_jacobian": 0.41025452205045976,
+            "max_condition": 117.85318773834811
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.3489987155591511,
+            "max_condition": 2338.2751389267887
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 1.2597301842479938,
+          "metrics": {
+            "min_scaled_jacobian": 0.41007055001714177,
+            "max_condition": 19.482604540431915
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.2282660332541568,
+            "max_condition": 2081.922505575031
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 1.3048116920793802,
+          "metrics": {
+            "min_scaled_jacobian": 0.41000342177933563,
+            "max_condition": 604.6011205754048
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.06885433832485492,
+            "max_condition": 3747.654748486886
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 3.964689304100249,
+          "metrics": {
+            "min_scaled_jacobian": 0.07000003865178132,
+            "max_condition": 1756.0953397619005
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F25-1-H38-03": {
+      "boundary_case": "25-to-1-r1-Q8-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "e01f7913c2c2fd0e3110a8b2a752d9f4044428551797211abb55d5d8e690a407",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.34031965627236793,
+          "max_condition": 130.21226230523013
+        }
+      },
+      "best_sj": {
+        "label": "optimized-3",
+        "mesh": "F25-1-H38-03-sj.mesh",
+        "height_ratio": 1.3048092569024805,
+        "metrics": {
+          "min_scaled_jacobian": 0.4100043247012563,
+          "max_condition": 255.94335100429095
+        }
+      },
+      "best_condition": {
+        "label": "scaled-5",
+        "mesh": "F25-1-H38-03-condition.mesh",
+        "height_ratio": 4.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.06885433832485492,
+          "max_condition": 61.55988934067602
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.34031965627236793,
+            "max_condition": 130.21226230523013
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.04519413751098097,
+            "max_condition": 997.7254010370128
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 1.304816305526174,
+          "metrics": {
+            "min_scaled_jacobian": 0.4100017111984992,
+            "max_condition": 2068.641333326874
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.09011261278129275,
+            "max_condition": 499.26719401612644
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 1.3048141355656055,
+          "metrics": {
+            "min_scaled_jacobian": 0.41000251577876284,
+            "max_condition": 5779.761650310126
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.178069316638428,
+            "max_condition": 251.77322308182562
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 1.3048102742329661,
+          "metrics": {
+            "min_scaled_jacobian": 0.41000394749224317,
+            "max_condition": 2268.3516845666877
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.34031965627236793,
+            "max_condition": 130.21226230523013
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 1.3048092569024805,
+          "metrics": {
+            "min_scaled_jacobian": 0.4100043247012563,
+            "max_condition": 255.94335100429095
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.2282660332541568,
+            "max_condition": 74.5959605788393
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 1.3603347204240475,
+          "metrics": {
+            "min_scaled_jacobian": 0.3900040151921155,
+            "max_condition": 903.771393870779
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.06885433832485492,
+            "max_condition": 61.55988934067602
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 3.9646863318032004,
+          "metrics": {
+            "min_scaled_jacobian": 0.07000013626186832,
+            "max_condition": 435.27094950462435
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F25-9-H33": {
+      "boundary_case": "25-to-9-r0-Q6-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "4d79229c6181b612518ff11f2139dcbb0bd4c41d8b3eca8ee5d06c1a82124c22",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.26000032169833365,
+          "max_condition": 4012.4701662090615
+        }
+      },
+      "best_sj": {
+        "label": "optimized-5",
+        "mesh": "F25-9-H33-sj.mesh",
+        "height_ratio": 0.287155287140628,
+        "metrics": {
+          "min_scaled_jacobian": 0.7200580781650021,
+          "max_condition": 9.314298245846864
+        }
+      },
+      "best_condition": {
+        "label": "optimized-2",
+        "mesh": "F25-9-H33-condition.mesh",
+        "height_ratio": 0.29696378330388556,
+        "metrics": {
+          "min_scaled_jacobian": 0.7200186354248556,
+          "max_condition": 8.696094617066011
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.26000032169833365,
+            "max_condition": 4012.4701662090615
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.15262810210149053,
+            "max_condition": 3969.139140502498
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 0.2317911162041907,
+          "metrics": {
+            "min_scaled_jacobian": 0.7001033344710538,
+            "max_condition": 578.3179860487335
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.26046807792250054,
+            "max_condition": 2519.7906823258327
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 0.28139499865518974,
+          "metrics": {
+            "min_scaled_jacobian": 0.7200469242733124,
+            "max_condition": 10.830115340086397
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.32973000812605224,
+            "max_condition": 2409.267452021669
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.29696378330388556,
+          "metrics": {
+            "min_scaled_jacobian": 0.7200186354248556,
+            "max_condition": 8.696094617066011
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.26000032169833365,
+            "max_condition": 4012.4701662090615
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 0.2852496092702382,
+          "metrics": {
+            "min_scaled_jacobian": 0.7200392911555309,
+            "max_condition": 9.630344999114284
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.07797019622546723,
+            "max_condition": 7637.695334112427
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 0.28678311784041627,
+          "metrics": {
+            "min_scaled_jacobian": 0.7200128712931786,
+            "max_condition": 9.350911866939244
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.02050290544769637,
+            "max_condition": 15085.680730402531
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 0.287155287140628,
+          "metrics": {
+            "min_scaled_jacobian": 0.7200580781650021,
+            "max_condition": 9.314298245846864
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F9-1-H13": {
+      "boundary_case": "9-to-1-r0-Q4-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "ca8c3075e580d39bfe63fc138ff231dd9cbed38b42a53f7efd7fcdb9cfab697b",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.3007026229154718,
+          "max_condition": 10.142294514857877
+        }
+      },
+      "best_sj": {
+        "label": "optimized-1",
+        "mesh": "F9-1-H13-sj.mesh",
+        "height_ratio": 0.654258722273632,
+        "metrics": {
+          "min_scaled_jacobian": 0.49021809752459256,
+          "max_condition": 55.652943213336215
+        }
+      },
+      "best_condition": {
+        "label": "scaled-4",
+        "mesh": "F9-1-H13-condition.mesh",
+        "height_ratio": 2.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.10000000000000003,
+          "max_condition": 9.754298534258098
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.3007026229154718,
+            "max_condition": 10.142294514857877
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.06670340950651656,
+            "max_condition": 50.48379233569742
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 0.6470388624282292,
+          "metrics": {
+            "min_scaled_jacobian": 0.4901355661246934,
+            "max_condition": 56.468568243100684
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.13252527500865963,
+            "max_condition": 25.24547890768596
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 0.654258722273632,
+          "metrics": {
+            "min_scaled_jacobian": 0.49021809752459256,
+            "max_condition": 55.652943213336215
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.23755649853613084,
+            "max_condition": 13.770931612231571
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 0.6800535396633776,
+          "metrics": {
+            "min_scaled_jacobian": 0.4900606300406425,
+            "max_condition": 54.732987808790355
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.3007026229154718,
+            "max_condition": 10.142294514857877
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 0.6800534889992526,
+          "metrics": {
+            "min_scaled_jacobian": 0.49005073286155787,
+            "max_condition": 54.56628845868398
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.10000000000000003,
+            "max_condition": 9.754298534258098
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 0.6801014447065605,
+          "metrics": {
+            "min_scaled_jacobian": 0.49002542372499625,
+            "max_condition": 950.6746292414489
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.027027027027027042,
+            "max_condition": 18.027863643759442
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 0.6800914122293519,
+          "metrics": {
+            "min_scaled_jacobian": 0.49003279656738136,
+            "max_condition": 1458.87185624907
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    },
+    "F9-1-H14": {
+      "boundary_case": "9-to-1-r1-Q5-01",
+      "height_bounds": [
+        0.05,
+        4.0
+      ],
+      "start_heights": [
+        0.125,
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "objective": "HexOpt scaled-Jacobian threshold; dense SJ and condition selections",
+      "source_sha256": "52f69a58408881cd27e1f8567cd91d49eb3e0a007901caedb1885258fbd0f3d3",
+      "adapter_sha256": "621fb27c6bcc95390d15938749d20d56507069c3c1c4ebb22e7fcaa479b0e4b0",
+      "binary_sha256": "fdd5f9649df620f9c0d9000370e2a1d4481348cdd009545d039486dac817e272",
+      "baseline": {
+        "label": "baseline",
+        "height_ratio": 1.0,
+        "metrics": {
+          "min_scaled_jacobian": 0.4700116801799161,
+          "max_condition": 64.63983718332625
+        }
+      },
+      "best_sj": {
+        "label": "optimized-3",
+        "mesh": "F9-1-H14-sj.mesh",
+        "height_ratio": 1.2540701378247752,
+        "metrics": {
+          "min_scaled_jacobian": 0.49015416088145153,
+          "max_condition": 62.671625322180866
+        }
+      },
+      "best_condition": {
+        "label": "optimized-2",
+        "mesh": "F9-1-H14-condition.mesh",
+        "height_ratio": 1.2685872005006933,
+        "metrics": {
+          "min_scaled_jacobian": 0.49005793429581107,
+          "max_condition": 59.33447186857211
+        }
+      },
+      "attempts": [
+        {
+          "start_height_ratio": 0.125,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-0"
+        },
+        {
+          "start_height_ratio": 0.25,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-1"
+        },
+        {
+          "start_height_ratio": 0.5,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-2"
+        },
+        {
+          "start_height_ratio": 1.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-3"
+        },
+        {
+          "start_height_ratio": 2.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-4"
+        },
+        {
+          "start_height_ratio": 4.0,
+          "returncode": 0,
+          "accepted": true,
+          "result": "optimized-5"
+        }
+      ],
+      "candidates": [
+        {
+          "label": "baseline",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.4700116801799161,
+            "max_condition": 64.63983718332625
+          }
+        },
+        {
+          "label": "scaled-0",
+          "height_ratio": 0.125,
+          "metrics": {
+            "min_scaled_jacobian": 0.08793363064914352,
+            "max_condition": 312.5703351387673
+          }
+        },
+        {
+          "label": "optimized-0",
+          "height_ratio": 1.2639510288595146,
+          "metrics": {
+            "min_scaled_jacobian": 0.49007215480083355,
+            "max_condition": 60.05571580177505
+          }
+        },
+        {
+          "label": "scaled-1",
+          "height_ratio": 0.25,
+          "metrics": {
+            "min_scaled_jacobian": 0.17386228289798517,
+            "max_condition": 159.79702021358477
+          }
+        },
+        {
+          "label": "optimized-1",
+          "height_ratio": 1.2680283794255343,
+          "metrics": {
+            "min_scaled_jacobian": 0.49003369339440933,
+            "max_condition": 59.351931725260755
+          }
+        },
+        {
+          "label": "scaled-2",
+          "height_ratio": 0.5,
+          "metrics": {
+            "min_scaled_jacobian": 0.31751443442636273,
+            "max_condition": 87.4594913276683
+          }
+        },
+        {
+          "label": "optimized-2",
+          "height_ratio": 1.2685872005006933,
+          "metrics": {
+            "min_scaled_jacobian": 0.49005793429581107,
+            "max_condition": 59.33447186857211
+          }
+        },
+        {
+          "label": "scaled-3",
+          "height_ratio": 1.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.4700116801799161,
+            "max_condition": 64.63983718332625
+          }
+        },
+        {
+          "label": "optimized-3",
+          "height_ratio": 1.2540701378247752,
+          "metrics": {
+            "min_scaled_jacobian": 0.49015416088145153,
+            "max_condition": 62.671625322180866
+          }
+        },
+        {
+          "label": "scaled-4",
+          "height_ratio": 2.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.26021552141610477,
+            "max_condition": 81.61783407388964
+          }
+        },
+        {
+          "label": "optimized-4",
+          "height_ratio": 1.3602700479723109,
+          "metrics": {
+            "min_scaled_jacobian": 0.4900007472192676,
+            "max_condition": 2127.487055060702
+          }
+        },
+        {
+          "label": "scaled-5",
+          "height_ratio": 4.0,
+          "metrics": {
+            "min_scaled_jacobian": 0.08829922577900551,
+            "max_condition": 139.42007001031388
+          }
+        },
+        {
+          "label": "optimized-5",
+          "height_ratio": 1.360252218133917,
+          "metrics": {
+            "min_scaled_jacobian": 0.49000729842909146,
+            "max_condition": 1435.2484097793238
+          }
+        }
+      ],
+      "max_iterations": 300000,
+      "stall_limit": 50000,
+      "attempt_timeout_seconds": 180
+    }
+  }
+}

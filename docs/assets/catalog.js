@@ -21,12 +21,13 @@
     const description=t.periodic?`<strong>${t.cap_faces[0]} → ${t.cap_faces[1]} cap quads · height ${number(t.height,3)}</strong><br>${esc(t.origin)}`:`<span class="sym-label">Symmetry: ${s.group} (order ${s.order})</span><strong>${s.mirrors.length?s.mirrors.map(esc).join(' & ')+(s.mirrors.length===1?' mirror':' mirrors'):'No measured mirrors'}</strong>${s.rotations.length?' · '+s.rotations.map(esc).join(', ')+' rotation':''}<br>${s.orbit_count} cell orbits · ${esc(t.origin)}`;
     const repetition=t.periodic?`<label>View <select class="repeat-mode" aria-label="Periodic completion for ${esc(t.id)}"><option value="1">One tile</option><option value="2">2×2 tiles</option></select></label>`:'';
     const variants=t.variants?`<details class="geometry-variants"><summary>${t.variants.length} ${t.variants.length===1?'embedding':'embeddings'} · representative ${esc(t.id)}</summary><p>Same periodic connectivity; different stored coordinates or cell placements.</p><ul>${t.variants.map(v=>`<li><a href="${esc(v.connectivity)}" download>${esc(v.id)}</a><br>min SJ ${number(v.min_sj,4)} · condition ${number(v.condition,2)} · height ${number(v.height,3)} · <a href="${esc(v.certificate)}">certificate</a></li>`).join('')}</ul></details>`:'';
+    const height=t.height_ratio===undefined?'':`<br><strong>Height / width ${number(t.height_ratio,3)}</strong> · ${esc({fixed:'fixed reference',sj:'best sampled SJ',condition:'lowest condition among trials'}[t.geometry_mode])}`;
     const metrics=METRICS.map(([key,label,precision])=>`<tr><th scope="row">${label}</th><td>${number(t.metrics[key],precision)}</td></tr>`).join('');
     const e=document.createElement('article');e.className='mesh-card';e.id=t.id;e.dataset.meshId=t.id;
     e.innerHTML=`<header class="card-header"><div><p class="card-kicker">${kicker}</p><h4${t.topology_class?' id="'+esc(t.topology_class)+'"':''}>${esc(displayId)}</h4></div>${t.reference_url?'<a class="publication-link" href="'+esc(t.reference_url)+'">Publication</a>':''}</header>
       <div class="viewer" aria-label="Interactive shrunk-element view of ${esc(displayId)}"><canvas aria-label="${esc(displayId)}: drag to rotate, scroll to zoom" tabindex="0"></canvas><div class="viewer-status" role="status">Loading mesh…</div><button class="reset-view" title="Reset view" aria-label="Reset view for ${esc(displayId)}">↺</button></div>
       <div class="viewer-controls"><label class="shrink-control" for="shrink-${t.id}">Shrink <input id="shrink-${t.id}" class="shrink" type="range" min="0" max="55" value="18" step="1"><output for="shrink-${t.id}">18%</output></label><label><span class="hidden">Color by</span><select class="color-mode" aria-label="Color ${esc(displayId)} by"><option value="quality">Cell quality</option><option value="orbits">${t.periodic?'Cell identity':'Cell orbits'}</option><option value="uniform">Uniform</option></select></label><label class="toggle" ${t.periodic?'hidden':''}><input class="show-planes" type="checkbox">Mirrors</label><label class="toggle"><input class="show-boundary" type="checkbox" checked>${t.periodic?'Caps':'Boundary'}</label>${repetition}</div>
-      <div class="card-body"><p class="symmetry-line">${description}</p>${variants}<table class="metrics"><caption>Quality measurements (21³ samples per cell)</caption><tbody>${metrics}</tbody></table><div class="legend"><span>Cell minimum SJ</span><i aria-hidden="true"></i><span>0 → 0.4+</span></div><div class="card-downloads"><a href="${esc(t.mesh)}" download>Mesh (.mesh)</a><a href="${esc(t.certificate)}" download>Validation report</a></div></div>`;
+      <div class="card-body"><p class="symmetry-line">${description}${height}</p>${variants}<table class="metrics"><caption>Quality measurements (21³ samples per cell)</caption><tbody>${metrics}</tbody></table><div class="legend"><span>Cell minimum SJ</span><i aria-hidden="true"></i><span>0 → 0.4+</span></div><div class="card-downloads"><a href="${esc(t.mesh)}" download>Mesh (.mesh)</a><a href="${esc(t.certificate)}" download>Validation report</a></div></div>`;
     e.querySelector('.card-downloads').insertAdjacentHTML('beforeend',extraDownloads);
     const range=e.querySelector('.shrink');range.addEventListener('input',()=>{e.querySelector('output').value=range.value+'%';});
     e.querySelector('.color-mode').addEventListener('change',event=>{e.querySelector('.legend').hidden=event.target.value!=='quality';});
@@ -65,7 +66,16 @@
     const url=new URL(location.href);if(selected==='all')url.searchParams.delete('cells');else url.searchParams.set('cells',selected);history.replaceState(null,'',url);if(catalog)render();
   }));
   document.getElementById('sort').addEventListener('change',e=>{sort=e.target.value;if(catalog)render();});
-  fetch(document.body.dataset.catalog||'assets/catalog.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{
+  let catalogPath=document.body.dataset.catalog||'assets/catalog.json';
+  const geometry=document.getElementById('geometry');
+  if(geometry){
+    const paths={fixed:catalogPath,sj:document.body.dataset.catalogSj,condition:document.body.dataset.catalogCondition};
+    const requested=new URL(location.href).searchParams.get('geometry');
+    geometry.value=Object.hasOwn(paths,requested)?requested:'sj';
+    catalogPath=paths[geometry.value];
+    geometry.addEventListener('change',()=>{const url=new URL(location.href);url.searchParams.set('geometry',geometry.value);location.assign(url);});
+  }
+  fetch(catalogPath).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{
     catalog=data;const count=new URL(location.href).searchParams.get('cells');const button=[...document.querySelectorAll('[data-count]')].find(b=>b.dataset.count===count);if(button)button.click();else render();
     if(location.hash)requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView());
   }).catch(error=>{status.textContent='The catalog could not load. Serve this directory over HTTP, or download the complete mesh archive above.';console.error(error);});
