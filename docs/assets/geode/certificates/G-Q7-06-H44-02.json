@@ -1,0 +1,322 @@
+{
+  "hexes": 44,
+  "vertices": 68,
+  "boundary_quads": 38,
+  "boundary_matches": true,
+  "face_multiplicity": {
+    "1": 38,
+    "2": 113
+  },
+  "opposite_internal_orientations": true,
+  "incompatible_pairs": [],
+  "distinct_cell_vertices": true,
+  "euler": 1,
+  "sampled": {
+    "grid": 15,
+    "min_det": 1.2500000061040414e-09,
+    "min_scaled_jacobian": 0.06281363130177593,
+    "nonpositive_hexes": 0
+  },
+  "jacobian_certificates": [
+    {
+      "positive": true,
+      "lower_bound": 1.250000006280949e-09,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.2500000061040396e-09,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.250000006280949e-09,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.250000006280949e-09,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.013032105098212511,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.013032105098212511,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 8.736273519004612e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 8.736273519003626e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00010999126198048212,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00010999126198047292,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00010999126198048296,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00010999126198047376,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 2.092889777153567e-08,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 2.092889777153619e-08,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 6.92740512641577e-07,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 6.927405126415992e-07,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.2387009353093399e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.2387009353093797e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.2387009353093399e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.2387009353093797e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00011441629574137736,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00011441629574137735,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0025237420732153854,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0025237420732153863,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0025237420732153845,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0025237420732153867,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0004003785022362434,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0004003785022362436,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0001766046757346342,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0001766046757346342,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0019400371786712158,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.001940037178671217,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0007780982158008919,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0007780982158008919,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0007780982158008925,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0007780982158008925,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 3.7044563356655167e-07,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 3.704456335665373e-07,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 3.704456335659321e-07,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 3.704456335659178e-07,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.000805036166576215,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.000805036166576215,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.000805036166576215,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.000805036166576215,
+      "depth": 0,
+      "leaves": 1
+    }
+  ],
+  "all_jacobians_positive": true,
+  "arithmetic": "exact rational from binary64 coordinates",
+  "manifold": {
+    "edge_links_valid": true,
+    "vertex_links_valid": true,
+    "bad_edges": [],
+    "bad_vertices": []
+  },
+  "homology": {
+    "betti_GF2": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "cell_counts": [
+      68,
+      174,
+      151,
+      44
+    ],
+    "boundary_ranks": [
+      67,
+      107,
+      44
+    ]
+  },
+  "caps_match": true,
+  "equal_sides": true,
+  "translation_matching": true,
+  "volume_error": 0.0,
+  "inside_box": true,
+  "planar_boundary_quads_positive": true,
+  "accepted": true,
+  "id": "G-Q7-06-H44-02",
+  "mesh_sha256": "b82f36047714eac1b77fa0e5dabf1fdde4bfec45666b89ab4096eb692c8ff274"
+}

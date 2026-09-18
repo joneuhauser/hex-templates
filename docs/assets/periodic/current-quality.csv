@@ -1,0 +1,8 @@
+class,geometry,cells_per_tile,height,min_sampled_sj,max_sampled_condition,periodic_json
+P38-01,R38-improved,38,1.0,0.09091911886670563,69.97882192289354,assets/periodic/periodic/R38-improved.json
+P52-01,R52-improved,52,1.0,0.35999174156467406,9.124898673337999,assets/periodic/periodic/R52-improved.json
+P56-01,R56-balanced,56,1.0,0.19173578034522748,23.76565969926232,assets/periodic/periodic/R56-balanced.json
+P56-02,R56-flipped,56,1.0,0.19047591463838898,21.564386349391228,assets/periodic/periodic/R56-flipped.json
+P86-01,R86-01-hexopt,86,1.0,0.2884187536495607,11.917091495310562,assets/periodic/periodic/R86-01-hexopt.json
+P108-01,R108-experimental,108,1.0,0.18396227399586362,8.426405429508065,assets/periodic/periodic/R108-experimental.json
+P110-01,R110-01-hexopt,110,1.0,0.2859044238380664,20.81004091998574,assets/periodic/periodic/R110-01-hexopt.json

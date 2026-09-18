@@ -1,0 +1,115 @@
+# 27 Feb 2012 cubit 13.1
+# make a geode template by hand
+
+create node   -1.2000000E+01   7.0000000E+00   1.2000000E+01
+create node    1.2000000E+01   7.0000000E+00  -1.2000000E+01
+create node   -2.2204460E-16   7.0000000E+00  -3.1086245E-15
+create node    1.2000000E+01   7.0000000E+00   1.2000000E+01
+create node    0.0000000E+00   7.0000000E+00   1.2000000E+01
+create node    1.2000000E+01   7.0000000E+00   0.0000000E+00
+create node    4.6170959E+00   7.0000000E+00   4.6170959E+00
+create node   -1.2000000E+01   7.0000000E+00  -1.2000000E+01
+create node   -1.2000000E+01   7.0000000E+00   0.0000000E+00
+create node  -1.2000000E+01  -7.0000000E+00  -1.2000000E+01
+create node  -1.2000000E+01  -7.0000000E+00   0.0000000E+00
+create node  -1.2000000E+01   1.6602540E+00  -5.0000000E+00
+create node  -1.2000000E+01   4.5470052E+00  -2.2204460E-15
+create node  -1.2000000E+01   1.6602540E+00   5.0000000E+00
+create node  -1.2000000E+01  -7.0000000E+00   1.2000000E+01
+create node   1.2000000E+01  -7.0000000E+00   1.2000000E+01
+create node   1.2000000E+01  -7.0000000E+00   0.0000000E+00
+create node   1.2000000E+01   1.6602540E+00   5.0000000E+00
+create node   1.2000000E+01   4.5470052E+00  -2.2204460E-15
+create node   1.2000000E+01   1.6602540E+00  -5.0000000E+00
+create node   1.2000000E+01  -7.0000000E+00  -1.2000000E+01
+create node   0.0000000E+00  -7.0000000E+00  -1.2000000E+01
+create node   5.0000000E+00   1.6602540E+00  -1.2000000E+01
+create node   2.2204460E-15   4.5470052E+00  -1.2000000E+01
+create node  -5.0000000E+00   1.6602540E+00  -1.2000000E+01
+create node   0.0000000E+00   7.0000000E+00  -1.2000000E+01
+create node   0.0000000E+00  -7.0000000E+00   1.2000000E+01
+create node  -5.0000000E+00   1.6602540E+00   1.2000000E+01
+create node   2.2204460E-15   4.5470052E+00   1.2000000E+01
+create node   5.0000000E+00   1.6602540E+00   1.2000000E+01
+create node   0.0000000E+00  -7.0000000E+00  -3.7687937E-16
+create node  -4.6170959E+00   7.0000000E+00  -4.6170959E+00
+create node   3.9212606E+00  -1.7762848E+00  -3.6333778E+00
+create node  -3.9174521E+00  -1.7529422E+00   3.6706045E+00
+create node  -4.0916905E+00  -1.5060866E+00  -4.1157551E+00
+create node  -2.4607381E-01   4.4702587E-01  -5.3389111E+00
+create node  -8.9449775E-01   3.9159763E+00  -6.5145450E+00
+create node  -4.3576155E+00   4.2417488E+00  -2.2680054E+00
+create node   2.8307971E-02   3.5329480E+00   1.3396359E-02
+create node   4.3977814E+00   4.2075095E+00   2.2972031E+00
+create node   8.5251921E-01   3.8948956E+00   6.5695238E+00
+create node   2.1835941E-01   4.4861808E-01   5.3907981E+00
+create node   4.0729437E+00  -1.4990010E+00   4.1726546E+00
+create node  5.6548109E+00   7.2012204E-01   6.5678048E-01
+create node   2.5800750E+00   1.3774180E+00   2.1034882E+00
+create node   1.2439096E-02   1.2455027E-03   1.8275408E-02
+create node  -2.5600090E+00   1.3643951E+00  -2.0506151E+00
+create node  -5.6499715E+00   7.0282149E-01  -6.1683786E-01
+
+
+create hex node         17        20         2        21        31        33        23        22
+create hex node         43        18        17        31        44        19        20        33
+create hex node         43        30        27        31        18         4        16        17
+create hex node         36        24        26        37        33        23         2        20
+create hex node         37        26        32        38        20         2         3        39
+create hex node         19         6         2        20        40         7         3        39
+create hex node         45        40        19        44        46        39        20        33
+create hex node         46        39        20        33        47        38        37        36
+create hex node         33        23        22        31        36        24        25        35
+create hex node         48        47        46        34        35        36        33        31
+create hex node         34        46        45        42        31        33        44        43
+create hex node         31        22        10        11        35        25         8        12
+create hex node         42        29        28        34        43        30        27        31
+create hex node         48        13        12        35        34        14        11        31
+create hex node         28        27        15         1        34        31        11        14
+create hex node         41         5         1        14        42        29        28        34
+create hex node         38        32         9        13        39         3         1        14
+create hex node         40         7         3        39        41         5         1        14
+create hex node         46        39        14        34        45        40        41        42
+create hex node         47        38        13        48        46        39        14        34
+create hex node         36        24        25        35        37        26         8        12
+create hex node         47        38        37        36        48        13        12        35
+create hex node         37        26         8        12        38        32         9        13
+create hex node         41         5         4        18        40         7         6        19
+create hex node         42        41        18        43        45        40        19        44
+create hex node         42        29        30        43        41         5         4        18
+
+graphics mode wire
+# label hex on
+# label node on
+
+quality hex all draw
+
+#
+draw hex 1 
+draw hex 2 add
+draw hex 3 add
+draw hex 4 add
+draw hex 5 add
+draw hex 6 add
+draw hex 7 add
+draw hex 8 add
+draw hex 9 add
+draw hex 10 add
+draw hex 11 add
+draw hex 12 add
+draw hex 13 add
+draw hex 14 add
+draw hex 15 add
+draw hex 16 add
+draw hex 17 add
+draw hex 18 add
+draw hex 19 add
+draw hex 20 add
+draw hex 21 add
+draw hex 22 add
+draw hex 23 add
+draw hex 24 add
+draw hex 25 add
+draw hex 26 add
+
+quality hex all

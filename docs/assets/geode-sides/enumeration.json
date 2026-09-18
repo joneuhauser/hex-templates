@@ -1,0 +1,201 @@
+{
+  "max_quads": 12,
+  "verification_max_quads": 10,
+  "runs": [
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 0,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 218,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=0 symmetry_orbits=1 visits=7737 candidates=218",
+      "results_sha256": "dc776fd853b777b0a50809c4ef84e27a00d1e680a38af536a56324e12e63beda"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 0,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 54,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=0 symmetry_orbits=0 visits=144518 candidates=54",
+      "results_sha256": "a73d15c9c4890556d7402883083e60c6744c72bfe8f5181e222e19828a6065b3"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 1,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 261,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=1 symmetry_orbits=1 visits=12324 candidates=261",
+      "results_sha256": "cb7e22668f0b74c7a764c37dad743bd8bb8c5527a28faeca4585dfd399e248a7"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 1,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 60,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=1 symmetry_orbits=0 visits=465543 candidates=60",
+      "results_sha256": "335acb1218cc96b473298ec1e855d0d1b5de2b0c154edea9749c6008fba3e7e9"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 2,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 199,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=2 symmetry_orbits=1 visits=18670 candidates=199",
+      "results_sha256": "3bfee90bcf6a2172e57acf7c3af610b736ea856f9e1b856131d4b24645e97a17"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 2,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 42,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=2 symmetry_orbits=0 visits=895524 candidates=42",
+      "results_sha256": "f7b6c53e1511c72c4c59ef276047aac09064210f64949bf0185fe3d721d23b5a"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 3,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 97,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=3 symmetry_orbits=1 visits=15723 candidates=97",
+      "results_sha256": "b3ff8a1216d11cf1533abbdbc8e630b560c8d600dcee75b482401c641e343c71"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 3,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 19,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=3 symmetry_orbits=0 visits=708665 candidates=19",
+      "results_sha256": "cb3c16a9b0ef5c892e8d2bb5001842b8747ebeaa95a598bfd14d6eaac2d0feed"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 4,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 35,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=4 symmetry_orbits=1 visits=13645 candidates=35",
+      "results_sha256": "cdc66e712f40da314c2db7dc98c08f50f9944c8cc61472d6b93201a8cf2b2850"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 4,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 1,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=4 symmetry_orbits=0 visits=440697 candidates=1",
+      "results_sha256": "ab83e56228469d5a1a8c7a5e1618fc44e87a51b60a8eff779e96a99c22d91c50"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 5,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 1,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=5 symmetry_orbits=1 visits=7803 candidates=1",
+      "results_sha256": "395bd2144fc7494306fdbf07b742b029355c9733493b7e0b60f2e25a26c5ab30"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 5,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=5 symmetry_orbits=0 visits=126327 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 6,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=6 symmetry_orbits=1 visits=4825 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 6,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=6 symmetry_orbits=0 visits=24469 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 7,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=7 symmetry_orbits=1 visits=1617 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 7,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=7 symmetry_orbits=0 visits=1055 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 8,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=8 symmetry_orbits=1 visits=610 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "max_quads": 10,
+      "vertical_interior_vertices": 8,
+      "symmetry_orbits": false,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=10 vertical_interior_vertices=8 symmetry_orbits=0 visits=59 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 9,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=9 symmetry_orbits=1 visits=53 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "max_quads": 12,
+      "vertical_interior_vertices": 10,
+      "symmetry_orbits": true,
+      "completed": true,
+      "candidates": 0,
+      "log": "QUAD_SEARCH_FINISHED max_quads=12 vertical_interior_vertices=10 symmetry_orbits=1 visits=16 candidates=0",
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "oriented_count": 811,
+  "classes": 432,
+  "counts": {
+    "2": 1,
+    "4": 1,
+    "5": 3,
+    "6": 1,
+    "7": 6,
+    "8": 11,
+    "9": 22,
+    "10": 55,
+    "11": 91,
+    "12": 241
+  },
+  "source_sha256": "0d5160861bea42013cd2cb73d99afd2857bcefff9078f87a652023490f36f3b2"
+}

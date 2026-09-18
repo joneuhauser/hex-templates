@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" role="img" aria-labelledby="title desc">
+<title id="title">One cell extension</title>
+<desc id="desc">A front face fixes four vertices of a cube. Four transverse vertices are assigned from existing vertices or new vertex orbits. Consuming one face and exposing five changes a sixteen-face front to twenty faces.</desc>
+<style>text{font-family:system-ui,sans-serif;fill:#202428;font-size:14px}.small{font-size:12px;fill:#5d646b}.edge{fill:none;stroke:#245a82;stroke-width:1.5}.unknown{fill:none;stroke:#77828b;stroke-width:1.2;stroke-dasharray:4 3}</style>
+<text x="20" y="24">1. Select a front face q</text>
+<text x="285" y="24">2. Assign transverse vertices</text>
+<text x="575" y="24">3. Update the front</text>
+<path d="M45 80H170V200H45Z" fill="#eaf0f5" stroke="#245a82" stroke-width="1.5"/>
+<text x="38" y="222">a</text><text x="171" y="222">b</text><text x="172" y="73">c</text><text x="36" y="73">d</text>
+<text x="105" y="146" text-anchor="middle">q ∈ Γ</text>
+<text x="225" y="146" text-anchor="middle">→</text>
+<path d="M330 95H435V200H330Z" fill="#eaf0f5" stroke="#245a82" stroke-width="1.5"/>
+<path class="unknown" d="M375 60H480V165H375Z"/>
+<path class="edge" d="M330 95 375 60M435 95 480 60M435 200 480 165M330 200 375 165"/>
+<text x="316" y="220">a</text><text x="436" y="220">b</text><text x="437" y="91">c</text><text x="316" y="91">d</text>
+<text x="364" y="156">w₀</text><text x="486" y="172">w₁</text><text x="486" y="62">w₂</text><text x="357" y="53">w₃</text>
+<text x="537" y="146" text-anchor="middle">→</text>
+<text x="585" y="85">Old front: 16 faces</text>
+<text x="585" y="120">Consume: 1 face</text>
+<text x="585" y="155">Expose: 5 faces</text>
+<path d="M580 174H780" stroke="#dce0e3"/>
+<text x="585" y="202">New front: 20 faces</text>
+<text x="20" y="263" class="small">Schematic without enforced mirrors; the cell consumes only q. Vertex positions are not assigned at this stage.</text>
+</svg>

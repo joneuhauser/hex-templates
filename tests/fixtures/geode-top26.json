@@ -1,0 +1,83 @@
+{
+  "source": "meshes/assets/geode52/regularized/regularized.json",
+  "source_sha256": "e7fd0d64634005228954eb650ed75f1ab6c11d8e9ef1f0d725884d8a835c1deb",
+  "site_mesh": "docs/assets/periodic/periodic/R52-improved.json",
+  "source_cells": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "periodic_copies": {
+    "29": [
+      0,
+      -1,
+      0
+    ],
+    "36": [
+      -1,
+      0,
+      0
+    ],
+    "41": [
+      -1,
+      0,
+      0
+    ],
+    "46": [
+      -1,
+      0,
+      0
+    ],
+    "47": [
+      -1,
+      0,
+      0
+    ]
+  },
+  "transform": "X=x+y-1; Y=y-x; Z=z-(zmin+zmax)/2",
+  "symmetry": "X -> -X (physical plane x+y=1)",
+  "mirror_projection_max_error": 5.466844510807995e-08,
+  "boundary_vertices": 52,
+  "boundary_quads": 50,
+  "bottom_quads": 6,
+  "top_quads": 8,
+  "cells": 26,
+  "cell_orbits": 15,
+  "fixed_cells": 4,
+  "period_vectors": [
+    [
+      1,
+      -1,
+      0
+    ],
+    [
+      1,
+      1,
+      0
+    ]
+  ],
+  "scope": "Fixed cut boundary, including 36 artificial periodic side quads; the boundary and replay connectivity are separate files."
+}

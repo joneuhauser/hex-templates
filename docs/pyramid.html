@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hexahedral meshes of Schneiders’ pyramid: connectivity search, geometric validation, quality measurements and mesh downloads.">
+  <title>Schneiders’ pyramid — Hexahedral meshes</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="icon" href="assets/figures/mark.svg" type="image/svg+xml">
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+  <script defer src="assets/catalog.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#templates">Skip to templates</a>
+<header class="site-header"><a class="brand" href="index.html"><img src="assets/figures/mark.svg" width="25" height="28" alt="">Hex template library</a><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="pyramid.html" aria-current="page">Pyramid</a><a href="geode.html">Geode</a><a href="geode-sides.html">Side walls</a><a href="periodic.html">Periodic rotation</a><a href="methodology.html">Methodology</a></nav></header>
+<main>
+<section class="introduction">
+  <div>
+    <h1>Hexahedral meshes of Schneiders’ pyramid</h1>
+    <p>We enumerate cell connectivities for a pyramid with a prescribed quadrilateral boundary, then optimize the interior vertex coordinates. The boundary has four quadrilaterals on its base and three on each triangular side.</p>
+    <p>The collection shows 55 connectivities found by the search, with 36–48 cells, plus the published 88-cell mesh. Each exported cell has a strictly positive Jacobian determinant throughout its reference cube.</p>
+    <p>The two-mirror enumeration covers both axial and diagonal orientations through 48 cells. Counts below exclude symmetric copies and candidates without a validated embedding.</p>
+    <p><a href="methodology.html#algorithm">Search algorithm</a> · <a href="methodology.html#quality">Quality definitions</a> · <a href="assets/quality.csv" download>Measurements (.csv)</a></p>
+  </div>
+  <figure><img src="assets/figures/pyramid.svg" alt="Pyramid boundary with four base quadrilaterals and three on each side."><figcaption>Prescribed boundary: 18 vertices, 32 edges, 16 quadrilaterals.</figcaption></figure>
+</section>
+<aside class="collection-highlight" aria-labelledby="highlight-title">
+  <h2 id="highlight-title">Improved element quality</h2>
+  <p><a href="pyramid.html?cells=44#H44-class4">H44-class4</a> achieves a minimum sampled scaled Jacobian of 0.359, higher than every literature-reference connectivity displayed here: 0.316 for the optimized 36-cell reference, 0.144 for the published 44-cell mesh, and 0.160 for the 88-cell mesh. It offers a quality improvement at 44 cells.</p>
+</aside>
+<section class="search-summary" aria-labelledby="search-setup">
+  <h2 id="search-setup">Search setup and references</h2>
+  <dl>
+    <dt>What is searched</dt><dd>Conforming hexahedral fillings of Schneiders’ pyramid. The entire 18-vertex, 16-quad boundary is prescribed: four base quads and three on each triangular face. Boundary coordinates stay fixed during HexOpt embedding.</dd>
+    <dt>Starting point</dt><dd>The search starts with the boundary and no interior cells. Interior vertices and cells are introduced by the solver; no literature connectivity is used as a seed.</dd>
+    <dt>Symmetry</dt><dd>Two perpendicular vertical mirrors are required: either the axial pair x = 0, y = 0 or the diagonal pair x = y, x = −y. The enumeration covers both choices through 48 cells. Symmetric copies are identified under the pyramid’s boundary symmetries.</dd>
+    <dt>Search limits</dt><dd>The default <code>run-pyramid.sh</code> uses the diagonal pair and a cap of 36 cells, with no time limit. Set <code>THREADS</code> to the worker count. The gallery includes certified embeddings through 48 cells and literature meshes; these constrained searches do not establish an unrestricted minimum.</dd>
+    <dt>Literature</dt><dd>Published solutions include <a href="https://arxiv.org/abs/1807.09415">36 cells by Xiang and Liu</a>, <a href="https://arxiv.org/abs/1806.01022">44 by Verhetsel, Pellerin and Remacle</a>, and <a href="https://doi.org/10.1002/cnm.1256">88 by Yamakawa and Shimada</a>. The search finds both the published 36-cell and 44-cell connectivities. The 36-cell mesh uses coordinates optimized here; the 44-cell mesh (H44-class16) retains the authors’ published coordinates. The 88-cell mesh is included for comparison and lies beyond the 48-cell search cap.</dd>
+  </dl>
+</section>
+<section class="collection" id="templates">
+  <h2>Templates</h2>
+  <p class="collection-description">Shrink separates cells for inspection. Sorting applies within each cell-count group. Measurements use the downloaded mesh coordinates. SJ means scaled Jacobian: larger values indicate better cell shape. Smaller condition numbers indicate less distortion. Both are sampled measurements; see the <a href="methodology.html#quality">quality definitions</a>. Drag a mesh to rotate; scroll over it to zoom. Use the row arrows or scrollbar to compare meshes of the same cell count.</p>
+  <div class="collection-toolbar"><div class="count-tabs" role="group" aria-label="Filter by element count"><button class="active" data-count="all" aria-pressed="true">All <span>56</span></button><button data-count="36" aria-pressed="false">36 <span>1</span></button><button data-count="40" aria-pressed="false">40 <span>2</span></button><button data-count="42" aria-pressed="false">42 <span>5</span></button><button data-count="44" aria-pressed="false">44 <span>7</span></button><button data-count="46" aria-pressed="false">46 <span>14</span></button><button data-count="48" aria-pressed="false">48 <span>26</span></button><button data-count="88" aria-pressed="false">88 <span>1</span></button></div><label class="sort-control">Sort by <select id="sort"><option value="quality">Minimum SJ (descending)</option><option value="condition">Condition number (ascending)</option><option value="id">Mesh ID</option></select></label></div>
+  <p id="collection-status" class="collection-status" role="status">Loading the template catalog…</p>
+  <div id="gallery"></div>
+  <noscript><p class="notice">The interactive viewers require JavaScript. The <a href="assets/templates.zip">mesh archive</a>, <a href="assets/quality.csv">quality table</a>, and <a href="methodology.html">methodology</a> are available without JavaScript.</p></noscript>
+</section>
+</main>
+<footer><span>Pyramid mesh collection</span><a href="assets/DATA_SOURCES.md">Data provenance</a><a href="methodology.html#references">References</a></footer>
+</body></html>

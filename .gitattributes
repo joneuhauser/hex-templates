@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.mesh -text
+*.zip binary
+# Preserve downloaded source journals and byte-identical CSV/archive contents.
+*.jou -text whitespace=-blank-at-eol
+*.csv -text whitespace=cr-at-eol

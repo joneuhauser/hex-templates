@@ -1,0 +1,71 @@
+cmake_minimum_required(VERSION 3.10)
+project(mirror_hex_search LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+option(NATIVE_ARCH "Optimize binaries for the CPU on the build host" OFF)
+if(NATIVE_ARCH)
+  include(CheckCXXCompilerFlag)
+  check_cxx_compiler_flag("-march=native" HAVE_MARCH_NATIVE)
+  if(HAVE_MARCH_NATIVE)
+    add_compile_options(-march=native)
+    add_definitions(-DHEX_NATIVE_ARCH=1)
+  endif()
+endif()
+include(CheckIncludeFileCXX)
+check_include_file_cxx("boost/multiprecision/cpp_int.hpp" HAVE_BOOST_MULTIPRECISION)
+if(NOT HAVE_BOOST_MULTIPRECISION)
+  message(FATAL_ERROR "Boost.Multiprecision headers are required for exact geometry (e.g. libboost-dev).")
+endif()
+find_package(OpenMP REQUIRED)
+find_package(Threads REQUIRED)
+add_executable(mirror_search mirror_search.cpp)
+target_link_libraries(mirror_search PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(mirror_search PRIVATE -Wall -Wextra -Wpedantic)
+
+
+add_executable(quad_disk_search quad_disk_search.cpp)
+target_compile_options(quad_disk_search PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(pattern_test EXCLUDE_FROM_ALL pattern_test.cpp)
+target_link_libraries(pattern_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(pattern_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(parity_test EXCLUDE_FROM_ALL parity_test.cpp)
+target_link_libraries(parity_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(parity_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(completion_test EXCLUDE_FROM_ALL completion_test.cpp)
+target_link_libraries(completion_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(completion_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(geometry_test EXCLUDE_FROM_ALL geometry_test.cpp)
+target_link_libraries(geometry_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(geometry_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(speedup_test EXCLUDE_FROM_ALL speedup_test.cpp)
+target_link_libraries(speedup_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(speedup_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(cover_test EXCLUDE_FROM_ALL cover_test.cpp)
+target_link_libraries(cover_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(cover_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(global_test EXCLUDE_FROM_ALL global_test.cpp)
+target_link_libraries(global_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(global_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(zero_test EXCLUDE_FROM_ALL zero_test.cpp)
+target_link_libraries(zero_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(zero_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(mrv_test EXCLUDE_FROM_ALL mrv_test.cpp)
+target_link_libraries(mrv_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(mrv_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(canonical_test EXCLUDE_FROM_ALL canonical_test.cpp)
+target_link_libraries(canonical_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(canonical_test PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(support_test EXCLUDE_FROM_ALL support_test.cpp)
+target_link_libraries(support_test PRIVATE OpenMP::OpenMP_CXX Threads::Threads)
+target_compile_options(support_test PRIVATE -Wall -Wextra -Wpedantic)

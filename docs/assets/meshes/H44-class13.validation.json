@@ -1,0 +1,595 @@
+{
+  "hexes": 44,
+  "vertices": 59,
+  "boundary_quads": 16,
+  "boundary_matches": true,
+  "face_multiplicity": {
+    "1": 16,
+    "2": 124
+  },
+  "opposite_internal_orientations": true,
+  "incompatible_pairs": [],
+  "distinct_cell_vertices": true,
+  "euler": 1,
+  "sampled": {
+    "grid": 7,
+    "min_det": 6.917053202086446e-06,
+    "min_scaled_jacobian": 0.2035567853902625,
+    "nonpositive_hexes": 0
+  },
+  "jacobian_certificates": [
+    {
+      "positive": true,
+      "lower_bound": 0.006405947504464067,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.006405947504464067,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0002676166144947912,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0002676166144947912,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0002676166144947912,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0002676166144947912,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.5456385879157928e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.5456385879157928e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00016732550056084867,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00016732550056084867,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.08155931988029e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.08155931988029e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 5.9370468783339454e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 5.9370468783339454e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 5.9370468783339454e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 5.9370468783339454e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 4.286281332120729e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 4.286281332120729e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 6.917053202086443e-06,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 6.917053202086443e-06,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 6.917053202086443e-06,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 6.917053202086443e-06,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0008087203547894895,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0008087203547894895,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.002481215360108113,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.002481215360108113,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.2772831257273826e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.2772831257273826e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00012128439620145255,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00012128439620145255,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00012128439620145255,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.00012128439620145255,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.8474690802774897e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.8474690802774897e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.8474690802774897e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 1.8474690802774897e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0002590534552007989,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 0.0002590534552007989,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 5.022602090277426e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 5.022602090277426e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 5.022602090277426e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 5.022602090277426e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 9.097083712675425e-05,
+      "depth": 0,
+      "leaves": 1
+    },
+    {
+      "positive": true,
+      "lower_bound": 9.097083712675425e-05,
+      "depth": 0,
+      "leaves": 1
+    }
+  ],
+  "all_jacobians_positive": true,
+  "arithmetic": "exact rational from binary64 coordinates",
+  "manifold": {
+    "edge_links_valid": true,
+    "vertex_links_valid": true,
+    "bad_edges": [],
+    "bad_vertices": []
+  },
+  "homology": {
+    "betti_GF2": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "cell_counts": [
+      59,
+      154,
+      140,
+      44
+    ],
+    "boundary_ranks": [
+      58,
+      96,
+      44
+    ]
+  },
+  "pyramid": {
+    "base_quads": 4,
+    "side_quads": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "boundary_vertices": 18,
+    "max_prescribed_vertex_error": 0.0,
+    "max_outside_halfspace": 0.0,
+    "integrated_volume": 1.8856180831641272,
+    "expected_volume": 1.885618083164127,
+    "volume_error": 2.220446049250313e-16
+  },
+  "exact_bernstein_bounds": [
+    {
+      "cell": 0,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "74898422131440371518122558657562513878019341921/11692013098647223345629478661730264157247460343808",
+      "min_coefficient_float": 0.006405947504464067
+    },
+    {
+      "cell": 1,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "74898422131440371518122558657562513878019341921/11692013098647223345629478661730264157247460343808",
+      "min_coefficient_float": 0.006405947504464067
+    },
+    {
+      "cell": 2,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "801018102294713108913203283183065256645869122069/2993155353253689176481146537402947624255349848014848",
+      "min_coefficient_float": 0.0002676166144947912
+    },
+    {
+      "cell": 3,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "801018102294713108913203283183065256645869122069/2993155353253689176481146537402947624255349848014848",
+      "min_coefficient_float": 0.0002676166144947912
+    },
+    {
+      "cell": 4,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "801018102294713108913203283183065256645869122069/2993155353253689176481146537402947624255349848014848",
+      "min_coefficient_float": 0.0002676166144947912
+    },
+    {
+      "cell": 5,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "801018102294713108913203283183065256645869122069/2993155353253689176481146537402947624255349848014848",
+      "min_coefficient_float": 0.0002676166144947912
+    },
+    {
+      "cell": 6,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "46263364136156275146829829606701196834449793413/2993155353253689176481146537402947624255349848014848",
+      "min_coefficient_float": 1.5456385879157928e-05
+    },
+    {
+      "cell": 7,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "46263364136156275146829829606701196834449793413/2993155353253689176481146537402947624255349848014848",
+      "min_coefficient_float": 1.5456385879157928e-05
+    },
+    {
+      "cell": 8,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "125207804434889349737834314943976474339184204001/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 0.00016732550056084867
+    },
+    {
+      "cell": 9,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "125207804434889349737834314943976474339184204001/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 0.00016732550056084867
+    },
+    {
+      "cell": 10,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2023296917600693137861577245563977940842237055/187072209578355573530071658587684226515959365500928",
+      "min_coefficient_float": 1.08155931988029e-05
+    },
+    {
+      "cell": 11,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2023296917600693137861577245563977940842237055/187072209578355573530071658587684226515959365500928",
+      "min_coefficient_float": 1.08155931988029e-05
+    },
+    {
+      "cell": 12,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2843280583424536334426406298433105814892890868615/47890485652059026823698344598447161988085597568237568",
+      "min_coefficient_float": 5.9370468783339454e-05
+    },
+    {
+      "cell": 13,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2843280583424536334426406298433105814892890868615/47890485652059026823698344598447161988085597568237568",
+      "min_coefficient_float": 5.9370468783339454e-05
+    },
+    {
+      "cell": 14,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2843280583424536334426406298433105814892890868615/47890485652059026823698344598447161988085597568237568",
+      "min_coefficient_float": 5.9370468783339454e-05
+    },
+    {
+      "cell": 15,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2843280583424536334426406298433105814892890868615/47890485652059026823698344598447161988085597568237568",
+      "min_coefficient_float": 5.9370468783339454e-05
+    },
+    {
+      "cell": 16,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2004610299185705109856330062484668129484329809/46768052394588893382517914646921056628989841375232",
+      "min_coefficient_float": 4.286281332120729e-05
+    },
+    {
+      "cell": 17,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2004610299185705109856330062484668129484329809/46768052394588893382517914646921056628989841375232",
+      "min_coefficient_float": 4.286281332120729e-05
+    },
+    {
+      "cell": 18,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "10351907410282804301916596128550799891860129945/1496577676626844588240573268701473812127674924007424",
+      "min_coefficient_float": 6.917053202086443e-06
+    },
+    {
+      "cell": 19,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "10351907410282804301916596128550799891860129945/1496577676626844588240573268701473812127674924007424",
+      "min_coefficient_float": 6.917053202086443e-06
+    },
+    {
+      "cell": 20,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "10351907410282804301916596128550799891860129945/1496577676626844588240573268701473812127674924007424",
+      "min_coefficient_float": 6.917053202086443e-06
+    },
+    {
+      "cell": 21,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "10351907410282804301916596128550799891860129945/1496577676626844588240573268701473812127674924007424",
+      "min_coefficient_float": 6.917053202086443e-06
+    },
+    {
+      "cell": 22,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "590973061333833797992477507986499620503612155/730750818665451459101842416358141509827966271488",
+      "min_coefficient_float": 0.0008087203547894895
+    },
+    {
+      "cell": 23,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "590973061333833797992477507986499620503612155/730750818665451459101842416358141509827966271488",
+      "min_coefficient_float": 0.0008087203547894895
+    },
+    {
+      "cell": 24,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "29010402490948748881709231399401157130048968253/11692013098647223345629478661730264157247460343808",
+      "min_coefficient_float": 0.002481215360108113
+    },
+    {
+      "cell": 25,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "29010402490948748881709231399401157130048968253/11692013098647223345629478661730264157247460343808",
+      "min_coefficient_float": 0.002481215360108113
+    },
+    {
+      "cell": 26,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "9557767063478800660600338171687318059732035195/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 1.2772831257273826e-05
+    },
+    {
+      "cell": 27,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "9557767063478800660600338171687318059732035195/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 1.2772831257273826e-05
+    },
+    {
+      "cell": 28,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "5672234996195610953965426265939061904623695421/46768052394588893382517914646921056628989841375232",
+      "min_coefficient_float": 0.00012128439620145255
+    },
+    {
+      "cell": 29,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "5672234996195610953965426265939061904623695421/46768052394588893382517914646921056628989841375232",
+      "min_coefficient_float": 0.00012128439620145255
+    },
+    {
+      "cell": 30,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "5672234996195610953965426265939061904623695421/46768052394588893382517914646921056628989841375232",
+      "min_coefficient_float": 0.00012128439620145255
+    },
+    {
+      "cell": 31,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "5672234996195610953965426265939061904623695421/46768052394588893382517914646921056628989841375232",
+      "min_coefficient_float": 0.00012128439620145255
+    },
+    {
+      "cell": 32,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "6912202459504046942075247432361737150779720265/374144419156711147060143317175368453031918731001856",
+      "min_coefficient_float": 1.8474690802774897e-05
+    },
+    {
+      "cell": 33,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "6912202459504046942075247432361737150779720265/374144419156711147060143317175368453031918731001856",
+      "min_coefficient_float": 1.8474690802774897e-05
+    },
+    {
+      "cell": 34,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "6912202459504046942075247432361737150779720265/374144419156711147060143317175368453031918731001856",
+      "min_coefficient_float": 1.8474690802774897e-05
+    },
+    {
+      "cell": 35,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "6912202459504046942075247432361737150779720265/374144419156711147060143317175368453031918731001856",
+      "min_coefficient_float": 1.8474690802774897e-05
+    },
+    {
+      "cell": 36,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "193846809053283990934324659723597508084670331725/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 0.0002590534552007989
+    },
+    {
+      "cell": 37,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "193846809053283990934324659723597508084670331725/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 0.0002590534552007989
+    },
+    {
+      "cell": 38,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "37583570834442617619861914611976546530561085701/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 5.022602090277426e-05
+    },
+    {
+      "cell": 39,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "37583570834442617619861914611976546530561085701/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 5.022602090277426e-05
+    },
+    {
+      "cell": 40,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "37583570834442617619861914611976546530561085701/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 5.022602090277426e-05
+    },
+    {
+      "cell": 41,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "37583570834442617619861914611976546530561085701/748288838313422294120286634350736906063837462003712",
+      "min_coefficient_float": 5.022602090277426e-05
+    },
+    {
+      "cell": 42,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2127264438561827442317432601451287107046177703/23384026197294446691258957323460528314494920687616",
+      "min_coefficient_float": 9.097083712675425e-05
+    },
+    {
+      "cell": 43,
+      "all_27_bernstein_coefficients_positive": true,
+      "min_coefficient_exact": "2127264438561827442317432601451287107046177703/23384026197294446691258957323460528314494920687616",
+      "min_coefficient_float": 9.097083712675425e-05
+    }
+  ],
+  "accepted": true
+}

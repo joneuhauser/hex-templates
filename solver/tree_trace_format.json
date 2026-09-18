@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "byte_order": "little",
+  "state_words": [
+    "id",
+    "parent_id",
+    "metadata",
+    "added_hex_vertices_plus_one",
+    "local_cover_work",
+    "local_choose_calls"
+  ],
+  "metadata": {
+    "placed_cells": [
+      0,
+      8
+    ],
+    "vertex_count": [
+      8,
+      8
+    ],
+    "front_size": [
+      16,
+      16
+    ],
+    "outcome": [
+      32,
+      8
+    ],
+    "cover_reason": [
+      40,
+      8
+    ]
+  },
+  "outcomes": {
+    "1": "cover_infeasible",
+    "2": "cell_or_face_budget",
+    "3": "exhausted_expansion",
+    "4": "candidate",
+    "5": "topology_rejected",
+    "6": "interrupted"
+  },
+  "cover_reasons": {
+    "0": "none",
+    "1": "inherited_quick_packing",
+    "2": "greedy_incompatible_packing",
+    "3": "bounded_cover_proof",
+    "4": "mirror_cover",
+    "5": "two_face_packing"
+  },
+  "expansion_words": [
+    "id",
+    "branches",
+    "cache_hits",
+    "cache_misses",
+    "candidates",
+    "canonical_rejections",
+    "component_rejections",
+    "cover_rejections",
+    "early_budget",
+    "early_completion",
+    "early_domain",
+    "early_geometry",
+    "early_overlap",
+    "early_parity",
+    "pair_reuses",
+    "partial_completion",
+    "partial_cover_calls",
+    "partial_cover_rejections",
+    "quick_packing_rejections",
+    "reject_location",
+    "reject_side",
+    "rejected",
+    "states",
+    "trials",
+    "cover_work",
+    "cover_unknown",
+    "insert_orbit_shape",
+    "insert_cell_cap",
+    "insert_boundary",
+    "insert_placed_cells",
+    "insert_orbit_cells",
+    "insert_face_incidence",
+    "insert_face_budget",
+    "insert_odd_cycle",
+    "rule_conflict",
+    "forced_choice",
+    "vertex_cap",
+    "relations",
+    "face_consistency",
+    "initial_overlap",
+    "initial_budget",
+    "children"
+  ],
+  "id": "(worker_local_serial << 8) | worker; serial starts at 1; parent 0 denotes root"
+}

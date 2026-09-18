@@ -1,0 +1,10 @@
+**/build/
+**/__pycache__/
+*.pyc
+.venv/
+solver/runs/
+solver/experiments/
+solver/*tests-*/
+solver/test-output*/
+solver/test-results-*/
+.DS_Store
