@@ -95,6 +95,7 @@ def build():
 <main><section class="atlas-intro"><p class="eyebrow">Mesh collections</p><h1>Hex meshing templates through symmetry-constrained exhaustive search</h1>
 <p>Symmetry constraints make exhaustive connectivity searches tractable within prescribed boundaries and cell-count limits. Explore the resulting templates, optimized geometry, and certified mesh downloads.</p>
 </section>
+<aside class="site-caution" aria-label="Experimental library caution"><h2>Caution</h2><p>This is an experimental library that I created by discussion with GPT-6 Astra for two days. The generated meshes check out and I'm using them in production for fluid dynamics simulations, but I'm not claiming that they are optimal. Use at your own risk. In particular I do not assert that there are no meshes with smaller element count for the same boundaries.</p></aside>
 <section id="collections" class="collection-links" aria-label="Mesh collections">{tiles}</section>
 <section class="atlas-method"><div><h2>How the meshes are checked</h2><p>Read about connectivity search, quality measurements, and exact geometric validation.</p></div><a href="methodology.html">Explore the methodology <span aria-hidden="true">→</span></a></section>
 </main><footer><span>Hex meshing templates</span><a href="methodology.html">Methodology</a><a href="assets/DATA_SOURCES.md">Data sources</a></footer></body></html>

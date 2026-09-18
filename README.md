@@ -1,4 +1,4 @@
-# Hexahedral meshing: Template library
+# Hex meshing templates through symmetry-constrained exhaustive search
 
 > [!CAUTION]
 > This is an experimental library that I created by discussion with GPT-6 Astra for two days. The generated meshes check out and I'm using them in production for fluid dynamics simulations, but I'm not claiming that they are optimal. Use at your own risk. In particular I do not assert that there are no meshes with smaller element count for the same boundaries.
@@ -6,21 +6,19 @@
 > [!TIP]
 > Check out the ![documentation and mesh library](http://joneuhauser.github.io/hex-templates).  
 
-A static mesh library with a connectivity search solver, validation tests,
+
+A [static mesh library](https://joneuhauser.github.io/hex-templates/) with a connectivity search solver, validation tests,
 and geometry optimization tools:
 
-- [Schneiders’ pyramid](docs/pyramid.html): 56 certified meshes.
-- [Mitchell’s Geode](docs/geode.html): 29 certified meshes, including the published
-  26-cell reference and 28 alternatives.
-- [Geode side walls](docs/geode-sides.html): 432 symmetric quadrangulations through
-  12 quads, identifying vertical flips.
-- [Periodic grid rotation](docs/periodic.html): seven certified periodic
-  connectivity classes, with 38–110 cells per tile.
+- [Schneiders’ pyramid](https://joneuhauser.github.io/hex-templates/pyramid.html)
+- [Mitchell’s Geode](https://joneuhauser.github.io/hex-templates/geode.html)
+- [Geode side walls](https://joneuhauser.github.io/hex-templates/geode-sides.html)
+- [Periodic grid rotation](https://joneuhauser.github.io/hex-templates/periodic.html)
 
-Every displayed mesh has an exact whole-cell positive-Jacobian certificate.
-Sampled quality measurements are separate from that certification. Search
-completion and symmetry restrictions are explained on the site; no unrestricted
-optimality claim is made.
+The collection pages describe the prescribed boundaries, search settings,
+results, quality comparisons, and literature references, with interactive views
+and downloads. See the [methodology](https://joneuhauser.github.io/hex-templates/methodology.html) for the solver and
+validation details. This README covers setup and running the tools.
 
 ## Preview
 
@@ -153,23 +151,12 @@ THREADS=8 SYMMETRY=other CAP=30 bash run-geode-top.sh
 THREADS=8 SYMMETRY=two CAP=40 bash run-geode-top.sh
 ```
 
-The default uses an unseeded cap-26 search with only
-`solver/input/geode-top.mesh`: six interface quads, eight top quads, and 36
-prescribed side quads in 18 translated pairs. One mirror constrains the interior.
-The search finds the 26-cell upper connectivity displayed in the site's
-52-cell template, with four fixed cells and eleven exchanged pairs (15 cell
-orbits). Each discovered connectivity gets a fresh
-harmonic initialization, HexOpt optimization with fixed boundary and mirror
-constraints, and exact whole-cell Jacobian validation. An oriented connectivity
-comparison identifies matches to cells 26–51 of `R52-improved.json`. The displayed
-coordinates and the search's fixed-boundary embedding can differ.
-
-This cut admits only this mirror. `SYMMETRY=other` and `SYMMETRY=two`
-preserve the same six-quad interface and eight-quad top, replacing the sides
-with a doubly symmetric periodic cut containing 22 quads in eleven translated
-pairs. They impose the other diagonal mirror or both mirrors, respectively.
-These are searches on prescribed finite boundaries, not an unrestricted
-enumeration of periodic transitions.
+The default searches from the boundary-only `solver/input/geode-top.mesh`,
+with one mirror and cap 26. The lower Geode is prescribed; all caps here count
+upper cells only. `SYMMETRY=other` and `SYMMETRY=two` select the other mirror or
+both mirrors, using a different side cut; their default caps are 30 and 40.
+See the [periodic collection](https://joneuhauser.github.io/hex-templates/periodic.html#search-setup) for the boundary
+definitions, symmetry planes, and relation to the full template.
 
 `run-geode-top.sh` is separate from `run.sh`. It accepts `OUTPUT_DIR`, `CAP`,
 `HEXOPT_BINARY`, and the HexOpt settings above. `THREADS` controls its search;
@@ -198,5 +185,5 @@ See [the adapter instructions](tools/HEXOPT_NOTES.md).
 GitHub Actions tests the sources and publishes only `docs/` to Pages.
 The solver, tools, and website code are [MIT licensed](LICENSE). Published mesh
 data retain their attribution and upstream notices in
-[the data provenance](docs/assets/DATA_SOURCES.md). The independent solver follows
+[the data provenance](https://joneuhauser.github.io/hex-templates/assets/DATA_SOURCES.md). The independent solver follows
 the earlier Hextreme investigations; it is not an upstream Hextreme release.
