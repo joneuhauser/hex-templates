@@ -35,7 +35,7 @@ using Rules=std::vector<std::array<int,3>>; // source top index, target top inde
 #ifndef HEX_NATIVE_ARCH
 #define HEX_NATIVE_ARCH 0
 #endif
-constexpr int MAXV=112;
+constexpr int MAXV=128;
 constexpr int FI[6][4]={{0,3,2,1},{4,5,6,7},{0,1,5,4},{1,2,6,5},{2,3,7,6},{3,0,4,7}};
 constexpr int EI[12][2]={{0,1},{1,2},{2,3},{3,0},{4,5},{5,6},{6,7},{7,4},{0,4},{1,5},{2,6},{3,7}};
 constexpr int BITS[8]={0,1,3,2,4,5,7,6};

@@ -25,12 +25,16 @@ class RefinementTests(unittest.TestCase):
 
     def test_side_enumeration_and_fixed_boundaries(self):
         with tempfile.TemporaryDirectory() as tmp:
-            output=Path(tmp)/'sides';enumerate_sides(output)
-            self.assertEqual(json.loads((output/'cases.json').read_text()),self.cases)
-            self.assertEqual(len(self.cases),16)
-            self.assertEqual([sum(c['top_grid']==n for c in self.cases) for n in (3,4)],[6,10])
+            output=Path(tmp)/'sides';enumerate_sides(output, grids=((1,3),(2,4)))
+            self.assertEqual(json.loads((output/'cases.json').read_text()),[c for c in self.cases if c['top_grid']<5])
+            large=Path(tmp)/'large';enumerate_sides(large, grids=((3,5),), max_quads=8)
+            self.assertEqual(json.loads((large/'cases.json').read_text()),[c for c in self.cases if c['top_grid']==5 and c['side_quads']<=8])
+            self.assertEqual(len(self.cases),28)
+            self.assertEqual([sum(c['top_grid']==n for c in self.cases) for n in (3,4,5)],[6,10,12])
             for c in self.cases:
-                self.assertEqual((output/f'{c["id"]}.mesh').read_bytes(),(INPUT/f'{c["id"]}.mesh').read_bytes())
+                generated=(large if c['top_grid']==5 else output)/f'{c["id"]}.mesh'
+                if generated.exists():
+                    self.assertEqual(generated.read_bytes(),(INPUT/f'{c["id"]}.mesh').read_bytes())
                 p,score=patch_geometry(c['side'],c['bottom_grid'],c['top_grid'],c['vertical_interior_vertices'])
                 bp,q=boundary(c['bottom_grid'],c['top_grid'],c['side'],p)
                 self.assertEqual(len(q),c['top_grid']**2+c['bottom_grid']**2+4*c['side_quads'])
@@ -53,7 +57,7 @@ class RefinementTests(unittest.TestCase):
 
     def test_unseeded_smallest_connectivities(self):
         with tempfile.TemporaryDirectory() as tmp:
-            for name in ['F9-1-H13','F16-4-H28']:
+            for name in ['F9-1-H13','F16-4-H28','F25-9-H33']:
                 t=next(t for t in self.catalog['templates'] if t['id']==name)
                 bp,_,_=read_mesh(INPUT/f'{t["boundary_case"]}.mesh')
                 p,h,_=read_mesh(ROOT/'docs'/t['mesh'])
@@ -67,6 +71,16 @@ class RefinementTests(unittest.TestCase):
                 self.assertEqual(len(unique),1)
                 target=dict(vertices=len(p),hexes=len(h),cells=h.tolist())
                 self.assertTrue(any(isomorphism(c,target,len(bp)) is not None for c in candidates))
+
+    def test_large_boundary_vertex_allowance(self):
+        t=next(t for t in self.catalog['templates'] if t['id']=='F25-9-H33')
+        with tempfile.TemporaryDirectory() as tmp:
+            result=subprocess.run([str(ROOT/'solver/build/mirror_search'),
+                '--input',str(INPUT/f'{t["boundary_case"]}.mesh'),'--cap','46',
+                '--threads','1','--mirrors','2','--planes','axial',
+                '--replay',str(ROOT/'docs'/t['mesh']),'--output',str(Path(tmp)/'replay.jsonl')],
+                capture_output=True,text=True,check=True,timeout=30)
+            self.assertIn('REPLAY_OK cells=33',result.stderr)
 
     def test_exact_geometry_and_archive(self):
         with zipfile.ZipFile(ROOT/'docs/assets/refinement/templates.zip') as archive:

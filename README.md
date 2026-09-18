@@ -177,9 +177,10 @@ Refinement templates have a separate launcher:
 ```sh
 THREADS=8 bash run-refinement.sh
 THREADS=8 CASE=16-to-4-r1-Q8-03 bash run-refinement.sh
+THREADS=8 CASE=25-to-9-r0-Q6-01 bash run-refinement.sh
 ```
 
-It searches the five displayed boundaries at their fixed caps, then runs HexOpt
+It searches the six displayed boundaries at their fixed caps, then runs HexOpt
 and exact validation. `CASE` selects one boundary ID from
 `solver/input/refinement/cases.json`; `PLANES=axial|diagonal` and `CAP` override
 the search settings. `OUTPUT_DIR` chooses a fresh parent folder; otherwise output
@@ -192,6 +193,10 @@ To enumerate and cross-check the refinement side walls into a fresh directory:
 ```sh
 OPENBLAS_NUM_THREADS=1 python3 tools/refinement.py sides --output /tmp/refinement-sides
 ```
+
+Use `--bottom-grid 3 --top-grid 5 --max-quads 10` to enumerate only 25-to-9
+side walls. The search command also accepts `--inputs DIRECTORY` for boundaries
+generated in another folder.
 
 Search scope, side patterns, and quality comparisons are on the
 [refinement page](https://joneuhauser.github.io/hex-templates/refinement.html).

@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT/'solver/input/refinement'
 SELECTED = {'9-to-1-r0-Q4-01': 13, '9-to-1-r1-Q5-01': 14,
             '16-to-4-r0-Q6-01': 28, '16-to-4-r1-Q8-03': 32,
-            '16-to-4-r0-Q7-04': 34}
+            '16-to-4-r0-Q7-04': 34, '25-to-9-r0-Q6-01': 33}
 sys.path.insert(0, str(ROOT/'solver'))
 from compare_meshes import isomorphism
 
@@ -101,16 +101,18 @@ def boundary(bottom, top, patch, side_points):
     return p,q
 
 
-def enumerate_sides(output):
+def enumerate_sides(output, grids=((1, 3), (2, 4), (3, 5)), max_quads=None):
     output.mkdir(parents=True, exist_ok=False)
-    records, runs = [], []
+    records, runs, scopes = [], [], []
     with tempfile.TemporaryDirectory() as tmp:
-        for bottom, top in [(1, 3), (2, 4)]:
+        for bottom, top in grids:
+            cap = max_quads if max_quads is not None else (10 if (bottom, top) == (3, 5) else 8)
+            scopes.append(dict(bottom_segments=bottom, top_segments=top, max_quads=cap))
             for r in (0, 1):
                 rows = []
                 for orbits in (True, False):
                     path = Path(tmp)/'sides.jsonl'
-                    command = [str(ROOT/'solver/build/quad_disk_search'), '8', str(r), str(path),
+                    command = [str(ROOT/'solver/build/quad_disk_search'), str(cap), str(r), str(path),
                                '--bottom-segments', str(bottom), '--top-segments', str(top)]
                     if not orbits:
                         command.append('--no-orbits')
@@ -139,7 +141,7 @@ def enumerate_sides(output):
                         side_quality=float(score), boundary_vertices=len(bp), boundary_quads=len(bq),
                         side=record, side_points_exact=[[str(v) for v in p] for p in points]))
     save(output/'cases.json', records)
-    save(output/'enumeration.json', dict(max_quads=8, vertical_interior_vertices=[0, 1],
+    save(output/'enumeration.json', dict(max_quads=max(s['max_quads'] for s in scopes), scopes=scopes, vertical_interior_vertices=[0, 1],
         source_sha256=hashlib.sha256((ROOT/'solver/quad_disk_search.cpp').read_bytes()).hexdigest(), runs=runs))
     print(f'Enumerated and cross-checked {len(records)} refinement side walls', flush=True)
 
@@ -236,11 +238,15 @@ def search_case(case, args, parent):
 
 
 def main():
+    global INPUT
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='mode', required=True)
     sides = sub.add_parser('sides'); sides.add_argument('--output', type=Path, required=True)
+    sides.add_argument('--bottom-grid', type=int)
+    sides.add_argument('--top-grid', type=int)
+    sides.add_argument('--max-quads', type=int)
     search = sub.add_parser('search')
-    search.add_argument('--case', default='all', help='Boundary ID from cases.json; all runs the five displayed cases')
+    search.add_argument('--case', default='all', help='Boundary ID from cases.json; all runs the displayed cases')
     search.add_argument('--threads', type=int, required=True)
     search.add_argument('--cap', type=int)
     search.add_argument('--planes', choices=['axial', 'diagonal'], default='axial')
@@ -248,11 +254,21 @@ def main():
     search.add_argument('--restarts', type=int, default=int(os.environ.get('HEXOPT_RESTARTS', '6')))
     search.add_argument('--hexopt', type=Path, default=Path(os.environ.get('HEXOPT_BINARY', ROOT/'solver/build/hexopt_fixed')))
     search.add_argument('--output', type=Path)
+    search.add_argument('--inputs', type=Path, default=INPUT,
+                        help='Folder containing cases.json and boundary meshes')
     args = parser.parse_args()
     if args.mode == 'sides':
-        enumerate_sides(args.output.resolve()); return
+        if (args.bottom_grid is None) != (args.top_grid is None):
+            parser.error('Specify both --bottom-grid and --top-grid')
+        grids = ((args.bottom_grid, args.top_grid),) if args.bottom_grid is not None else ((1, 3), (2, 4), (3, 5))
+        if (args.max_quads is not None and not 1 <= args.max_quads <= 12) or any(not 1 <= n <= 12 for pair in grids for n in pair):
+            parser.error('Grid sizes and quad cap must be between 1 and 12')
+        if any((bottom+top)%2 or (args.max_quads if args.max_quads is not None else (10 if (bottom,top)==(3,5) else 8)) < (bottom+top)//2+1 for bottom,top in grids):
+            parser.error('Top and bottom need equal parity and a sufficient quad cap')
+        enumerate_sides(args.output.resolve(), grids, args.max_quads); return
     if not 1 <= args.threads <= 256 or args.seconds < 0 or args.restarts < 1 or (args.cap is not None and not 1 <= args.cap <= 48):
         parser.error('Invalid thread count, cap, time limit or restart count')
+    INPUT = args.inputs.resolve()
     cases = json.loads((INPUT/'cases.json').read_text())
     selected = [c for c in cases if (c['id'] in SELECTED if args.case == 'all' else c['id'] == args.case)]
     if not selected:

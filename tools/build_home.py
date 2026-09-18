@@ -86,7 +86,7 @@ def build():
         ('geode.html','geode.svg','Mitchell’s Geode','A hexahedral transition between a quadrilateral grid and a quadrangulated tetrahedral-mesh boundary.',f'{len(geode["templates"])} meshes','26–44 cells','The 26-cell Geode mesh with separated cells'),
         ('geode-sides.html','side-walls.svg','Geode side walls','Quadrilateral boundary patterns for assembling Geode cells with matching sides.',f'{len(sides["patterns"])} patterns',f'Up to {sides["max_quads"]} quads','Three quadrilateral side-wall patterns'),
         ('periodic.html','periodic.svg','Periodic grid rotation','Transitions between rectangular and rotated quad grids, grouped by periodic connectivity.',f'{len(periodic["templates"])} connectivities','38–110 cells per tile','A unit cube with meshed top and bottom and empty side walls'),
-        ('refinement.html','refinement.svg','Refinement templates','9-to-1 and 16-to-4 quad-grid transitions, with certified hex meshes and enumerated side walls.',f'{len(refinement["templates"])} meshes','16 side-wall patterns','A 32-cell hexahedral refinement transition')]
+        ('refinement.html','refinement.svg','Refinement templates','9-to-1, 16-to-4 and 25-to-9 quad-grid transitions, with certified hex meshes and enumerated side walls.',f'{len(refinement["templates"])} meshes','28 side-wall patterns','A 32-cell hexahedral refinement transition')]
     tiles=''.join(f'''<a class="collection-card" href="{url}">
 <div class="collection-preview"><img src="assets/previews/{preview}" alt="{alt}" width="620" height="310"></div>
 <div class="collection-card-body"><div class="collection-card-title"><h2>{title}</h2><span class="collection-arrow" aria-hidden="true">↗</span></div>
