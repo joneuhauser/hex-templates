@@ -23,3 +23,4 @@ python3 "$root/tests/test_launch_configs.py"
 python3 "$root/tests/test_periodic_transition.py"
 
 python3 "$root/tests/test_periodic_gallery.py"
+python3 "$root/tests/test_refinement.py"

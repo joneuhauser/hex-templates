@@ -2,7 +2,8 @@
 from html import escape
 
 PAGES=[('index.html','Overview'),('pyramid.html','Pyramid'),('geode.html','Geode'),
-       ('geode-sides.html','Side walls'),('periodic.html','Periodic rotation'),('methodology.html','Methodology')]
+       ('geode-sides.html','Side walls'),('periodic.html','Periodic rotation'),
+       ('refinement.html','Refinement'),('methodology.html','Methodology')]
 
 
 def header(current):

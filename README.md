@@ -14,6 +14,7 @@ and geometry optimization tools:
 - [Mitchell’s Geode](https://joneuhauser.github.io/hex-templates/geode.html)
 - [Geode side walls](https://joneuhauser.github.io/hex-templates/geode-sides.html)
 - [Periodic grid rotation](https://joneuhauser.github.io/hex-templates/periodic.html)
+- [Refinement templates](https://joneuhauser.github.io/hex-templates/refinement.html)
 
 The collection pages describe the prescribed boundaries, search settings,
 results, quality comparisons, and literature references, with interactive views
@@ -170,6 +171,30 @@ The search frame is `X=x+y-1`, `Y=y-x`, `Z=z-(zmin+zmax)/2`, with mirror `X=0`
 (physical plane `x+y=1`); the other diagonal is `Y=0`. This scales horizontal
 lengths by √2 while preserving vertical lengths, so quality values in this
 frame are not directly comparable to the website's geometry.
+
+Refinement templates have a separate launcher:
+
+```sh
+THREADS=8 bash run-refinement.sh
+THREADS=8 CASE=16-to-4-r1-Q8-03 bash run-refinement.sh
+```
+
+It searches the five displayed boundaries at their fixed caps, then runs HexOpt
+and exact validation. `CASE` selects one boundary ID from
+`solver/input/refinement/cases.json`; `PLANES=axial|diagonal` and `CAP` override
+the search settings. `OUTPUT_DIR` chooses a fresh parent folder; otherwise output
+goes under `solver/runs/`. Each boundary gets `search/`, `hexopt/`, `status.json`,
+and `results.json`. Embedding is sequential and accepts the HexOpt environment
+settings above. This launcher is separate from `run.sh`.
+
+To enumerate and cross-check the refinement side walls into a fresh directory:
+
+```sh
+OPENBLAS_NUM_THREADS=1 python3 tools/refinement.py sides --output /tmp/refinement-sides
+```
+
+Search scope, side patterns, and quality comparisons are on the
+[refinement page](https://joneuhauser.github.io/hex-templates/refinement.html).
 
 The HexOpt gradient kernel is an external dependency needed only to repeat
 coordinate optimization, not to rebuild the site or run the standard tests.

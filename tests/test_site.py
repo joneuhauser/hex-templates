@@ -18,7 +18,8 @@ class Page(HTMLParser):
             if key in a:self.links.append(a[key])
 pages={p:Page(p.read_text()) for p in DOCS.glob('*.html')}
 for name, catalog_path in [('pyramid', 'catalog.json'), ('geode', 'geode/catalog.json'),
-                           ('periodic', 'periodic/current-catalog.json')]:
+                           ('periodic', 'periodic/current-catalog.json'),
+                           ('refinement', 'refinement/catalog.json')]:
     # Catalog cards and periodic class headings are inserted by catalog.js.
     page = pages[DOCS/f'{name}.html']
     for entry in json.loads((DOCS/'assets'/catalog_path).read_text())['templates']:

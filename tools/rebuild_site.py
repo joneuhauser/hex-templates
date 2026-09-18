@@ -14,6 +14,7 @@ def main():
         ['build_catalog.py'],
         ['build_geode_catalog.py'],
         ['build_periodic_catalog.py'],
+        ['build_refinement_catalog.py'],
         ['build_geode_sides.py', '--search-results',
          str(ROOT/'tests/fixtures/side-quadrangulations')],
         ['make_figures.py'],

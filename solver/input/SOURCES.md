@@ -77,3 +77,17 @@ artificial side quads paired by translations in the lattice `(1,-1,0)`, `(1,1,0)
 The 26 cells form 15 mirror orbits, including four fixed cells.
 `tools/geode_top.py` also constructs a two-mirror periodic cut with identical
 caps and 22 side quads, for the alternative-symmetry searches.
+
+## Refinement boundaries
+
+`refinement/` contains boundary-only cubes for 9-to-1 and 16-to-4 grid
+transitions. `cases.json` records exact rational side-wall coordinates and
+connectivity; the top and bottom use regular grids on `[-1,1]²` at z = ±1.
+All four walls are identical, left/right symmetric, and translation matching.
+
+Generate these inputs into a fresh folder with
+`python3 tools/refinement.py sides --output DIRECTORY`. This enumerates side
+disks through eight quads, with zero or one extra vertex per vertical edge,
+and cross-checks orbit insertion against individual-quad insertion.
+`enumeration.json` records the source hash and output hashes for both modes.
+No volume filling is supplied as search input.

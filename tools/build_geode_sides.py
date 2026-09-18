@@ -55,9 +55,9 @@ def boundary_points(r):
         (F(-1), 1-F(2*j, r+1)) for j in range(1, r+1)]
 
 
-def harmonic(quads, r):
+def harmonic(quads, r, boundary=None):
     """Solve the unweighted graph Laplacian in exact rational arithmetic."""
-    points = boundary_points(r)
+    points = boundary_points(r) if boundary is None else list(boundary)
     nb, n = len(points), 1+max(v for q in quads for v in q)
     adjacent = defaultdict(set)
     for q in quads:

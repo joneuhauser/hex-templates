@@ -8,6 +8,7 @@
 .side-toolbar label { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
 .side-group { margin-bottom: 36px; }
 .side-group h2 { margin-bottom: 16px; }
+.side-group > h4 { margin: 16px 0; }
 .side-group h2 span { font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 12px; }
 .side-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .side-card { border: 1px solid var(--line); min-width: 0; background: #fff; }

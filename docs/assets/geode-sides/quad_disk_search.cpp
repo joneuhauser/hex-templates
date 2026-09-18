@@ -29,29 +29,29 @@ struct State {
   std::map<Edge,Edge> front;
 };
 struct Search {
-  int r,cap,boundary,limit;
+  int r,cap,boundary,limit,bottom,top;
   bool symmetry;
   std::vector<int> side_mask;
   std::set<Edge> rim;
   std::set<std::vector<Quad>> emitted;
   std::ostream& output;
   unsigned long long visits=0,solutions=0;
-  Search(int subdivisions,int max_quads,std::ostream& out,bool use_orbits=true)
-    :r(subdivisions),cap(max_quads),boundary(6+2*r),limit(cap+r+4),symmetry(use_orbits),output(out) {}
+  Search(int subdivisions,int max_quads,std::ostream& out,bool use_orbits=true,int b=2,int t=2)
+    :r(subdivisions),cap(max_quads),boundary(b+t+2+2*r),limit(cap+boundary/2+1),bottom(b),top(t),symmetry(use_orbits),output(out) {}
 
   State initial() {
     State s;
-    // CCW: bottom left, bottom midpoint, bottom right, right interior
-    // vertices upward, top right, top midpoint, top left, left vertices down.
+    // CCW boundary: bottom to the right, right upward, top to the left,
+    // then left downward. The reflection sends vertex i to bottom-i.
     side_mask.resize(boundary);
     for(int i=0;i<boundary;++i) {
       int mask=0;
-      if(i<=2) mask|=1;
-      if(i>=2&&i<=r+3) mask|=2;
-      if(i>=r+3&&i<=r+5) mask|=4;
-      if(i>=r+5||i==0) mask|=8;
+      if(i<=bottom) mask|=1;
+      if(i>=bottom&&i<=bottom+r+1) mask|=2;
+      if(i>=bottom+r+1&&i<=bottom+r+1+top) mask|=4;
+      if(i>=bottom+r+1+top||i==0) mask|=8;
       side_mask[i]=mask;
-      s.mirror.push_back((2-i+boundary)%boundary);
+      s.mirror.push_back((bottom-i+boundary)%boundary);
       s.color.push_back(i%2);
       Edge e{i,(i+1)%boundary};rim.insert(edge(e.first,e.second));s.front[edge(e.first,e.second)]=e;
     }
@@ -159,7 +159,7 @@ struct Search {
       directed[{rotated[0],rotated[1]}]=rotated;
     }
     std::vector<int> action(s.mirror.size(),-1),inverse(s.mirror.size(),-1);
-    for(int v=0;v<boundary;++v) { action[v]=(2-v+boundary)%boundary;inverse[action[v]]=v; }
+    for(int v=0;v<boundary;++v) { action[v]=(bottom-v+boundary)%boundary;inverse[action[v]]=v; }
     bool changed=true;
     while(changed) {
       changed=false;
@@ -179,7 +179,7 @@ struct Search {
   }
   void emit(const State& s) {
     int faces=int(s.quads.size()),vertices=int(s.mirror.size());
-    if(vertices!=faces+r+4||!links(s,true)) return;
+    if(vertices!=faces+boundary/2+1||!links(s,true)) return;
     auto reflected=symmetry?s.mirror:reflection(s);
     if(reflected.empty()) return;
     std::vector<int> labels;auto cells=canonical(s,labels);
@@ -202,8 +202,11 @@ struct Search {
     }
     // A new reflection orbit has either one axis vertex or two exchanged vertices.
     for(int size:{1,2}) if((symmetry||size==1)&&existing+size<=limit) {
+      // An odd bottom subdivision makes reflection exchange bipartite colors.
+      // Such an action cannot fix a vertex.
+      if(symmetry&&size==1&&bottom%2) continue;
       State next=s;
-      for(int j=0;j<size;++j) { next.mirror.push_back(existing+(size==1?0:1-j));next.color.push_back(wanted); }
+      for(int j=0;j<size;++j) { next.mirror.push_back(existing+(size==1?0:1-j));next.color.push_back(wanted^((bottom%2)&&j)); }
       q[slot]=existing;complete_quad(std::move(next),q,slot+1);
     }
   }
@@ -217,12 +220,21 @@ struct Search {
 };
 int main(int argc,char** argv) {
   try {
-    if(argc!=4&&argc!=5) throw std::runtime_error("Usage: quad_disk_search MAX_QUADS VERTICAL_INTERIOR_VERTICES OUTPUT.jsonl [--no-orbits]");
-    int cap=std::stoi(argv[1]),r=std::stoi(argv[2]);
-    if(cap<2||cap>12||r<0||r>cap-2) throw std::runtime_error("Invalid bounds");
+    if(argc<4) throw std::runtime_error("Usage: quad_disk_search MAX_QUADS VERTICAL_INTERIOR_VERTICES OUTPUT.jsonl [--no-orbits] [--bottom-segments N] [--top-segments N]");
+    int cap=std::stoi(argv[1]),r=std::stoi(argv[2]),bottom=2,top=2;
+    bool orbits=true;
+    for(int i=4;i<argc;++i) {
+      std::string option=argv[i];
+      if(option=="--no-orbits") orbits=false;
+      else if((option=="--bottom-segments"||option=="--top-segments")&&i+1<argc) {
+        int value=std::stoi(argv[++i]);
+        if(value<1||value>12) throw std::runtime_error("Invalid edge subdivision");
+        (option=="--bottom-segments"?bottom:top)=value;
+      } else throw std::runtime_error("Unknown or incomplete option");
+    }
+    if(cap<1||cap>12||r<0||(bottom+top)%2||r>cap-(bottom+top)/2) throw std::runtime_error("Invalid bounds");
     std::ofstream out(argv[3]);if(!out) throw std::runtime_error("Cannot open output");
-    if(argc==5&&std::string(argv[4])!="--no-orbits") throw std::runtime_error("Unknown option");
-    Search search(r,cap,out,argc==4);auto state=search.initial();search.dfs(state);
+    Search search(r,cap,out,orbits,bottom,top);auto state=search.initial();search.dfs(state);
     std::cerr<<"QUAD_SEARCH_FINISHED max_quads="<<cap<<" vertical_interior_vertices="<<r
              <<" symmetry_orbits="<<search.symmetry<<" visits="<<search.visits<<" candidates="<<search.solutions<<'\n';
     if(!out) throw std::runtime_error("Output failed");
